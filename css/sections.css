@@ -132,10 +132,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 100px var(--space-6) var(--space-8);
+  padding: max(80px, calc(64px + env(safe-area-inset-top, 0px))) var(--space-6) max(var(--space-8), env(safe-area-inset-bottom, 0px)) var(--space-6);
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--transition-base), visibility var(--transition-base);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-sheet.is-open {
@@ -146,14 +148,15 @@
 .mobile-sheet__links {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: clamp(8px, 1.8vh, 18px);
 }
 
 .mobile-sheet__link {
   font-family: var(--font-serif);
-  font-size: 2.25rem;
+  font-size: clamp(1.35rem, 3.8vh, 2.25rem);
   color: var(--color-text-secondary);
   transition: color var(--transition-fast), transform var(--transition-fast);
+  padding: 4px 0;
 }
 
 .mobile-sheet__link:hover,
@@ -1039,6 +1042,14 @@
   grid-template-columns: 0.85fr 1.15fr;
   gap: var(--space-12);
   align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.how-it-works__steps-col,
+.how-it-works__step-card {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .how-it-works__sticky-left {
@@ -1140,7 +1151,9 @@
   position: absolute;
   inset: 0;
   width: 100%;
+  max-width: 100%;
   height: 100%;
+  max-height: 100%;
   object-fit: cover;
   opacity: 0.08;
   pointer-events: none;
@@ -1200,6 +1213,7 @@
 
 .how-it-works__step-mockup img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -1574,7 +1588,9 @@
   position: absolute;
   inset: 0;
   width: 100%;
+  max-width: 100%;
   height: 100%;
+  max-height: 100%;
   object-fit: cover;
   filter: contrast(1.1) saturate(1.05) brightness(0.9);
   transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1), filter 600ms ease;
@@ -2244,7 +2260,7 @@
    -------------------------------------------------------------------------- */
 .site-footer {
   padding-top: var(--space-16);
-  padding-bottom: var(--space-10);
+  padding-bottom: max(var(--space-10), calc(var(--space-8) + env(safe-area-inset-bottom, 0px)));
   background-color: #070709;
   border-top: 1px solid var(--color-border);
   position: relative;

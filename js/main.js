@@ -57,13 +57,18 @@ const CHECKOUT_URL = "#";
   const hamburgerBtn = document.querySelector('.hamburger-btn');
   const mobileSheet = document.getElementById('mobile-sheet');
   const mobileSheetLinks = document.querySelectorAll('.mobile-sheet__link');
+  let savedScrollY = 0;
 
   function openMobileSheet() {
     if (!hamburgerBtn || !mobileSheet) return;
+    savedScrollY = window.pageYOffset || document.documentElement.scrollTop;
     hamburgerBtn.classList.add('is-active');
     hamburgerBtn.setAttribute('aria-expanded', 'true');
     mobileSheet.classList.add('is-open');
     document.body.classList.add('menu-locked');
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.width = '100%';
   }
 
   function closeMobileSheet() {
@@ -72,6 +77,10 @@ const CHECKOUT_URL = "#";
     hamburgerBtn.setAttribute('aria-expanded', 'false');
     mobileSheet.classList.remove('is-open');
     document.body.classList.remove('menu-locked');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, savedScrollY);
   }
 
   if (hamburgerBtn) {
@@ -96,6 +105,12 @@ const CHECKOUT_URL = "#";
       if (hamburgerBtn) hamburgerBtn.focus();
     }
   });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024 && mobileSheet && mobileSheet.classList.contains('is-open')) {
+      closeMobileSheet();
+    }
+  }, { passive: true });
 
   /* ------------------------------------------------------------------------
      4. Smooth Anchor Scrolling with Header Offset

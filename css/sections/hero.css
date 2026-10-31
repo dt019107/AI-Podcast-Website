@@ -30,7 +30,7 @@
    -------------------------------------------------------------------------- */
 .site-header {
   position: fixed;
-  top: 20px;
+  top: max(16px, env(safe-area-inset-top, 16px));
   left: 0;
   right: 0;
   z-index: 100;
@@ -356,6 +356,7 @@
 
 /* Second Headline Line: "TURN ANY CONTENT INTO STUDIO-QUALITY AI" */
 .hero__title-line2 {
+  display: block;
   font-family: 'Archivo', 'Unbounded', sans-serif;
   font-weight: 900;
   font-stretch: 125%;
@@ -367,6 +368,8 @@
   letter-spacing: -0.03em;
   max-width: 680px;
   text-align: left;
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 /* --------------------------------------------------------------------------
@@ -565,12 +568,14 @@
 
 .hero__portrait-wrap {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: flex-end;
   justify-content: center;
   height: 100%;
   max-height: 100%;
+  width: 100%;
   max-width: 100%;
+  overflow: hidden;
 }
 
 /* 3 Concentric Sound Rings Pulsing from Ear */
@@ -640,6 +645,7 @@
   height: 100%;
   max-height: 100%;
   width: auto;
+  max-width: 100%;
   object-fit: contain;
   object-position: bottom center;
   pointer-events: none;
@@ -911,19 +917,19 @@
    9. Responsive Adaptations
    -------------------------------------------------------------------------- */
 
-/* Tablet Viewport (1024px) */
+/* Tablet & Medium Screen Viewports (960px to 1024px) */
 @media (max-width: 1024px) {
   .hero--editorial {
     min-height: 880px;
-    padding-top: 96px;
+    padding-top: max(96px, calc(80px + env(safe-area-inset-top, 0px)));
   }
 
   .hero__giant-word {
-    font-size: clamp(60px, 14vw, 170px);
+    font-size: clamp(52px, 12vw, 150px);
   }
 
   .hero__title-line2 {
-    font-size: clamp(24px, 3.8vw, 44px);
+    font-size: clamp(24px, 3.6vw, 40px);
     max-width: 520px;
   }
 
@@ -947,26 +953,15 @@
   }
 }
 
-/* Small Tablet / Portrait (768px) */
-@media (max-width: 768px) {
-  .hero--editorial {
-    min-height: 920px;
-    padding-top: 90px;
-  }
-
-  .hero__giant-word {
-    font-size: clamp(52px, 13vw, 110px);
-  }
-
-  /* CTA row wraps under headline */
+/* Tablet Portrait & Stacking Breakpoint (769px to 960px) */
+@media (max-width: 960px) {
   .hero__line2-cta-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 20px;
   }
 
   .hero__title-line2 {
-    font-size: clamp(22px, 3.8vw, 32px);
     max-width: 100%;
   }
 
@@ -976,15 +971,36 @@
     flex-wrap: wrap;
     gap: 12px;
   }
+}
 
-  .hero__ribbon {
+/* Small Tablet / Portrait (768px) */
+@media (max-width: 768px) {
+  .hero--editorial {
+    min-height: 900px;
+    padding-top: max(90px, calc(76px + env(safe-area-inset-top, 0px)));
+  }
+
+  .hero__giant-word {
+    font-size: clamp(44px, 10vw, 88px);
+  }
+
+  .hero__title-line2 {
+    font-size: clamp(22px, 3.8vw, 32px);
+    max-width: 100%;
+  }
+
+  .hero__ribbon,
+  .hero__ribbon--top,
+  .hero__ribbon--bottom {
     height: 56px;
   }
 
-  .hero__ribbon-block {
+  .hero__ribbon-block,
+  .hero__ribbon--top .hero__ribbon-block,
+  .hero__ribbon--bottom .hero__ribbon-block {
     height: 56px;
-    font-size: 20px;
-    padding: 0 24px;
+    font-size: 18px;
+    padding: 0 20px;
   }
 
   .hero__ribbon-mic {
@@ -1002,20 +1018,21 @@
   }
 }
 
-/* Mobile Handsets (640px down to 320px) */
+/* Mobile Handsets (640px down to 361px) */
 @media (max-width: 640px) {
   .hero--editorial {
-    min-height: 860px;
-    padding-top: 84px;
+    min-height: 840px;
+    padding-top: max(84px, calc(72px + env(safe-area-inset-top, 0px)));
   }
 
   .hero__container {
-    padding: 0 16px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
   }
 
-  /* PODCASTS fills full width (~18vw) */
+  /* PODCASTS fits safely within 288px container */
   .hero__giant-word {
-    font-size: clamp(38px, 17vw, 68px);
+    font-size: clamp(32px, 10.5vw, 56px);
     line-height: 0.9;
     letter-spacing: -0.03em;
     max-width: 100%;
@@ -1027,12 +1044,16 @@
     gap: 16px;
   }
 
-  /* Line 2 is 28px on mobile */
   .hero__title-line2 {
-    font-size: 28px;
-    line-height: 1.05;
+    display: block;
+    font-size: clamp(17px, 5vw, 24px);
+    font-stretch: 100%;
+    font-variation-settings: 'wdth' 100, 'wght' 900;
+    line-height: 1.12;
     letter-spacing: -0.02em;
     max-width: 100%;
+    word-break: keep-all;
+    overflow-wrap: normal;
   }
 
   .hero__subcopy-row {
@@ -1046,11 +1067,13 @@
   }
 
   .hero__trust-line {
-    font-size: 11px;
-    gap: 6px;
+    font-size: 12px;
+    gap: 6px 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 
-  /* Full-width Stacked CTA Buttons (Min 52px tall) */
+  /* Full-width Stacked CTA Buttons (Min 48px/54px tall) */
   .hero__cta-actions {
     flex-direction: column;
     width: 100%;
@@ -1063,6 +1086,7 @@
     justify-content: flex-start;
     padding: 0 8px;
     gap: 10px;
+    box-sizing: border-box;
   }
 
   .hero__cta-play-circle {
@@ -1073,13 +1097,16 @@
   .hero__cta-label {
     flex: 1;
     text-align: center;
-    font-size: 13.5px;
-    padding: 10px 14px;
+    font-size: clamp(11px, 3.4vw, 13.5px);
+    padding: 8px 8px;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
   }
 
   .hero__cta-secondary {
     width: 100%;
-    height: 52px;
+    height: 50px;
+    box-sizing: border-box;
   }
 
   /* One ribbon only on mobile (hide bottom reflection ribbon) */
@@ -1092,14 +1119,17 @@
     transform: rotate(-3deg);
   }
 
-  .hero__ribbon {
-    height: 48px;
+  .hero__ribbon,
+  .hero__ribbon--top {
+    height: 46px;
   }
 
-  .hero__ribbon-block {
-    height: 48px;
-    font-size: 16px;
-    padding: 0 16px;
+  .hero__ribbon-block,
+  .hero__ribbon--top .hero__ribbon-block {
+    height: 46px;
+    font-size: 15px;
+    padding: 0 14px;
+    gap: 8px;
   }
 
   /* Portrait centered at bottom */
@@ -1116,30 +1146,46 @@
   }
 
   .hero__sound-rings {
-    width: 380px;
-    height: 380px;
+    width: min(340px, 88vw);
+    height: min(340px, 88vw);
   }
 
   .hero__ear-duotone {
-    width: 80px;
-    height: 80px;
+    width: 72px;
+    height: 72px;
   }
 }
 
-/* 320px Ultra-Compact Handset */
+/* 320px Ultra-Compact Handset (iPhone SE 1st gen / Galaxy Fold narrow) */
 @media (max-width: 360px) {
   .hero__giant-word {
-    font-size: 38px;
+    font-size: clamp(26px, 9vw, 32px);
+    letter-spacing: -0.04em;
   }
 
   .hero__title-line2 {
-    font-size: 24px;
+    font-size: clamp(14px, 4.2vw, 16px);
+    font-stretch: 100%;
+    font-variation-settings: 'wdth' 100, 'wght' 900;
+    line-height: 1.15;
+    word-break: keep-all;
+    overflow-wrap: normal;
   }
 
   .hero__trust-line {
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 5px;
+  }
+
+  .hero__trust-sep {
+    display: none;
+  }
+
+  .hero__cta-label {
+    font-size: 11px;
+    padding: 7px 6px;
+    letter-spacing: -0.01em;
   }
 }
 
