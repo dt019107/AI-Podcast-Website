@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 220" width="480" height="220" fill="none">
+  <defs>
+    <linearGradient id="s1card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141418" />
+      <stop offset="100%" stop-color="#0E0E11" />
+    </linearGradient>
+  </defs>
+  <rect width="480" height="220" rx="12" fill="url(#s1card)" stroke="rgba(255,255,255,0.08)" />
+
+  <!-- Dropzone Container -->
+  <rect x="24" y="24" width="432" height="172" rx="10" fill="#111114" stroke="rgba(139,124,246,0.3)" stroke-width="1.25" stroke-dasharray="6 6" />
+
+  <!-- Upload Icon & Circle -->
+  <circle cx="240" cy="80" r="26" fill="rgba(139,124,246,0.12)" stroke="rgba(139,124,246,0.3)" stroke-width="1" />
+  <path d="M240 94V66m-8 8 8-8 8 8" stroke="#8B7CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Text Hierarchy -->
+  <text x="240" y="132" fill="#EDEDEF" font-family="'Inter', sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="-0.01em">Drop article, script, PDF, or paste text</text>
+  <text x="240" y="154" fill="#71717A" font-family="'Inter', sans-serif" font-size="11" text-anchor="middle">Auto-extracts headings, speaker cues, and conversational hooks</text>
+
+  <!-- Format Badges -->
+  <g transform="translate(132, 168)">
+    <rect width="44" height="18" rx="4" fill="#1A1A22" stroke="rgba(255,255,255,0.08)" />
+    <text x="22" y="12" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="9" font-weight="500" text-anchor="middle">.PDF</text>
+
+    <rect x="52" width="48" height="18" rx="4" fill="#1A1A22" stroke="rgba(255,255,255,0.08)" />
+    <text x="76" y="12" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="9" font-weight="500" text-anchor="middle">.DOCX</text>
+
+    <rect x="108" width="46" height="18" rx="4" fill="#1A1A22" stroke="rgba(255,255,255,0.08)" />
+    <text x="131" y="12" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="9" font-weight="500" text-anchor="middle">.TXT</text>
+
+    <rect x="162" width="54" height="18" rx="4" fill="#1A1A22" stroke="rgba(255,255,255,0.08)" />
+    <text x="189" y="12" fill="#8B7CF6" font-family="'Inter', sans-serif" font-size="9" font-weight="600" text-anchor="middle">URL / RSS</text>
+  </g>
+</svg>

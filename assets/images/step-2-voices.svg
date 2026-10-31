@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 220" width="480" height="220" fill="none">
+  <defs>
+    <linearGradient id="s2card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141418" />
+      <stop offset="100%" stop-color="#0E0E11" />
+    </linearGradient>
+    <linearGradient id="vGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B7CF6" />
+      <stop offset="100%" stop-color="#6D5DD0" />
+    </linearGradient>
+  </defs>
+  <rect width="480" height="220" rx="12" fill="url(#s2card)" stroke="rgba(255,255,255,0.08)" />
+
+  <!-- Voice Select Card 1 (Active) -->
+  <g transform="translate(24, 28)">
+    <rect width="204" height="164" rx="10" fill="#181820" stroke="#8B7CF6" stroke-width="1.25" />
+    <circle cx="42" cy="42" r="22" fill="url(#vGrad1)" />
+    <text x="42" y="47" fill="#0A0A0B" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">JP</text>
+    
+    <text x="76" y="36" fill="#EDEDEF" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Julian Pierce</text>
+    <text x="76" y="52" fill="#8B7CF6" font-family="'Inter', sans-serif" font-size="10">Host · Conversational</text>
+
+    <!-- Mini waveform -->
+    <path d="M24 95v-8m6 12v-16m6 10v-14m6 18v-22m6 14v-18m6 8v-12m6 16v-20m6 12v-16m6 20v-24m6 10v-14m6 14v-18m6 8v-12m6 16v-20m6 10v-14m6 18v-22m6 8v-12m6 14v-18m6 10v-14m6 16v-20m6 8v-12m6 14v-18m6 18v-22m6 10v-14m6 14v-18" stroke="#8B7CF6" stroke-width="1.75" stroke-linecap="round" />
+
+    <rect x="24" y="126" width="156" height="22" rx="6" fill="rgba(139,124,246,0.15)" />
+    <text x="102" y="141" fill="#8B7CF6" font-family="'Inter', sans-serif" font-size="10" font-weight="600" text-anchor="middle">ACTIVE HOST · 100% TIMBRE</text>
+  </g>
+
+  <!-- Voice Select Card 2 (Secondary) -->
+  <g transform="translate(252, 28)">
+    <rect width="204" height="164" rx="10" fill="#131316" stroke="rgba(255,255,255,0.08)" />
+    <circle cx="42" cy="42" r="22" fill="#24242C" />
+    <text x="42" y="47" fill="#EDEDEF" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">SL</text>
+    
+    <text x="76" y="36" fill="#EDEDEF" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Sarah Lynn</text>
+    <text x="76" y="52" fill="#71717A" font-family="'Inter', sans-serif" font-size="10">Co-Host · Deep Analysis</text>
+
+    <!-- Mini waveform -->
+    <path d="M24 95v-6m6 10v-12m6 8v-10m6 14v-16m6 10v-12m6 6v-8m6 12v-14m6 8v-10m6 14v-16m6 8v-10m6 10v-12m6 6v-8m6 12v-14m6 8v-10m6 14v-16m6 6v-8m6 10v-12m6 8v-10m6 12v-14m6 6v-8m6 10v-12m6 14v-16" stroke="#71717A" stroke-width="1.75" stroke-linecap="round" opacity="0.6" />
+
+    <rect x="24" y="126" width="156" height="22" rx="6" fill="#1C1C22" />
+    <text x="102" y="141" fill="#A1A1AA" font-family="'Inter', sans-serif" font-size="10" font-weight="500" text-anchor="middle">CO-HOST ASSIGNED</text>
+  </g>
+</svg>

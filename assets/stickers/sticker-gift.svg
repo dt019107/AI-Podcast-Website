@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" fill="none">
+  <defs>
+    <filter id="sticker-shadow-gf" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#000000" flood-opacity="0.4" />
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#F59E0B" flood-opacity="0.3" />
+    </filter>
+    <linearGradient id="gift-box" x1="16" y1="36" x2="80" y2="84" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FB7185" />
+      <stop offset="50%" stop-color="#E11D48" />
+      <stop offset="100%" stop-color="#9F1239" />
+    </linearGradient>
+    <linearGradient id="ribbon" x1="20" y1="14" x2="76" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+  <g filter="url(#sticker-shadow-gf)">
+    <!-- White Die-Cut Backing -->
+    <rect x="20" y="42" width="56" height="40" rx="8" stroke="#FFFFFF" stroke-width="7" fill="#FFFFFF" />
+    <rect x="16" y="32" width="64" height="14" rx="6" stroke="#FFFFFF" stroke-width="7" fill="#FFFFFF" />
+    <path d="M48 32 C38 18 26 22 34 32 C40 38 48 32 48 32 C48 32 56 38 62 32 C70 22 58 18 48 32 Z" 
+          stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round" fill="#FFFFFF" />
+    <!-- Gift Box Base -->
+    <rect x="20" y="42" width="56" height="40" rx="8" fill="url(#gift-box)" stroke="#FFFFFF" stroke-width="2" />
+    <!-- Box Lid -->
+    <rect x="16" y="32" width="64" height="14" rx="6" fill="url(#gift-box)" stroke="#FFFFFF" stroke-width="2" />
+    <!-- Vertical Ribbon -->
+    <rect x="42" y="32" width="12" height="50" fill="url(#ribbon)" stroke="#FFFFFF" stroke-width="1.5" />
+    <!-- Horizontal Ribbon Lid Band -->
+    <rect x="16" y="36" width="64" height="6" fill="url(#ribbon)" fill-opacity="0.35" />
+    <!-- Ribbon Bow -->
+    <path d="M48 32 C38 18 26 22 34 32 C40 38 48 32 48 32 Z" fill="url(#ribbon)" stroke="#FFFFFF" stroke-width="2" />
+    <path d="M48 32 C58 18 70 22 62 32 C56 38 48 32 48 32 Z" fill="url(#ribbon)" stroke="#FFFFFF" stroke-width="2" />
+    <circle cx="48" cy="32" r="4.5" fill="#FEF08A" stroke="#FFFFFF" stroke-width="1.5" />
+    <!-- Sheen -->
+    <rect x="24" y="46" width="14" height="32" rx="4" fill="#FFFFFF" fill-opacity="0.2" />
+  </g>
+</svg>

@@ -1,0 +1,391 @@
+/**
+ * ==========================================================================
+ * COMPONENTS.CSS - Framer Studio UI Components
+ * Buttons, Cards, Bento Containers, Accordion, Monoline Icons & Mockups
+ * ==========================================================================
+ */
+
+/* --------------------------------------------------------------------------
+   1. Buttons (Pill Radius 999px, Magnetic Ready, Arrow Slide)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 48px;
+  min-height: 44px;
+  padding: 0 var(--space-6);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast),
+              transform var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary {
+  background-color: var(--color-accent);
+  color: #0A0A0B;
+  border: 1px solid var(--color-accent);
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 4px 16px -2px rgba(139, 124, 246, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 8px 24px -2px rgba(139, 124, 246, 0.55);
+  transform: translateY(-2px);
+}
+
+.btn--primary svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn--primary:hover svg {
+  transform: translateX(4px);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.btn--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.btn--lg {
+  height: 52px;
+  padding: 0 var(--space-8);
+  font-size: 1rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   2. Framer Cards & Bento Units (150-200ms lift, 16px radius)
+   -------------------------------------------------------------------------- */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-8);
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 16px 36px -12px rgba(0, 0, 0, 0.65);
+  transition: border-color var(--transition-base),
+              transform var(--transition-base),
+              box-shadow var(--transition-base),
+              background-color var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-3px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 24px 48px -12px rgba(0, 0, 0, 0.85), 0 0 24px rgba(139, 124, 246, 0.1);
+}
+
+/* Bento Tile Media Containers */
+.bento-media {
+  position: relative;
+  border-radius: var(--radius-thumb);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  aspect-ratio: 16 / 10;
+  background-color: #000000;
+  margin-bottom: var(--space-6);
+}
+
+.bento-media img,
+.bento-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bento-media video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover .bento-media video,
+.bento-media.is-playing video {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   3. Monoline Icons & Subtle Placeholders
+   -------------------------------------------------------------------------- */
+.icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.icon-box svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* Neutral Placeholder Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  border-radius: var(--radius-sm);
+  line-height: 1.4;
+}
+
+.badge--placeholder {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  background: transparent;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   4. Accordion (Elevated Studio Cards, Monospace Counters, 250ms Physics)
+   -------------------------------------------------------------------------- */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  counter-reset: faq-counter;
+}
+
+.accordion__item {
+  counter-increment: faq-counter;
+  position: relative;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  transition: border-color var(--transition-base), background-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-fast);
+  overflow: hidden;
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.4);
+}
+
+.accordion__item:hover {
+  border-color: var(--color-border-hover);
+  background-color: var(--color-surface-hover);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px);
+}
+
+.accordion__item.is-open {
+  border-color: rgba(139, 124, 246, 0.35);
+  background: linear-gradient(180deg, #151519 0%, #111114 100%);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.7), 0 0 24px rgba(139, 124, 246, 0.06);
+}
+
+/* Subtle top hairline rim highlight when open */
+.accordion__item.is-open::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(139, 124, 246, 0.7) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  gap: var(--space-4);
+  transition: color var(--transition-fast);
+}
+
+/* Monospace Index Badge Counter */
+.accordion__trigger::before {
+  content: counter(faq-counter, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.accordion__item:hover .accordion__trigger::before {
+  color: var(--color-text-secondary);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.accordion__item.is-open .accordion__trigger::before {
+  color: var(--color-accent);
+  background: rgba(139, 124, 246, 0.12);
+  border-color: rgba(139, 124, 246, 0.35);
+}
+
+.accordion__trigger span {
+  flex: 1;
+  line-height: 1.45;
+}
+
+.accordion__trigger:hover {
+  color: #FFFFFF;
+}
+
+.accordion__item.is-open .accordion__trigger {
+  color: #FFFFFF;
+}
+
+/* Enclosed Circular Toggle Button */
+.accordion__icon {
+  width: 32px;
+  height: 32px;
+  padding: 7px;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  transition: transform 250ms var(--ease-framer), background-color 250ms var(--ease-framer), border-color 250ms var(--ease-framer), color 250ms var(--ease-framer);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.accordion__item:hover .accordion__icon {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--color-text-primary);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.accordion__item.is-open .accordion__icon {
+  transform: rotate(45deg);
+  background-color: rgba(139, 124, 246, 0.14);
+  border-color: rgba(139, 124, 246, 0.4);
+  color: var(--color-accent);
+}
+
+.accordion__content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 250ms var(--ease-framer);
+  overflow: hidden;
+}
+
+.accordion__content.is-open {
+  grid-template-rows: 1fr;
+}
+
+.accordion__inner {
+  overflow: hidden;
+  padding: 0 24px 22px calc(24px + 38px);
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 740px;
+}
+
+@media (max-width: 640px) {
+  .accordion__trigger {
+    padding: 18px 18px;
+    gap: var(--space-3);
+    font-size: 0.975rem;
+  }
+
+  .accordion__inner {
+    padding: 0 18px 20px 18px;
+    font-size: 0.9rem;
+  }
+
+  .accordion__icon {
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Clean Framer Mockup Window Frame (No Traffic Dots)
+   -------------------------------------------------------------------------- */
+.mockup-window {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.mockup-window__header {
+  height: 38px;
+  background: var(--color-surface-subtle);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-4);
+  justify-content: space-between;
+}
+
+.mockup-window__title {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-tertiary);
+}
+
+.mockup-window__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.6875rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-tertiary);
+}
+
+.mockup-window__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}

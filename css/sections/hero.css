@@ -1,0 +1,1169 @@
+/**
+ * ==========================================================================
+ * HERO.CSS - Bold Editorial Neo-Brutalist Podcast Hero
+ * Unified Dark Aesthetic (#0A0A0B), Giant Archivo Typography, 3D Coin,
+ * Dual Ribbon Marquees, Capsule CTA, B&W Cutout Portrait with Blue Ear Glow
+ * ==========================================================================
+ */
+
+:root {
+  --ear-x: 61%;
+  --ear-y: 58%;
+  --ear-size: 150px;
+}
+
+/* Accessibility sr-only helper */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. Floating Pill Header (Unified Dark Glass Pill)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+}
+
+.site-header.is-hidden {
+  transform: translateY(-120%);
+  opacity: 0;
+}
+
+.site-header__pill {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 48px;
+  padding: 0 8px 0 20px;
+  background-color: rgba(17, 17, 19, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-weight: 700;
+  font-size: 15px;
+  color: #EDEDEF;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+
+.site-header__brand-icon {
+  width: 18px;
+  height: 18px;
+  color: #8B7CF6;
+}
+
+@media (min-width: 1025px) {
+  .site-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .site-header__nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(237, 237, 239, 0.72);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s ease;
+  }
+
+  .site-header__nav-link:hover {
+    color: #FFFFFF;
+  }
+
+  .site-header__cta {
+    height: 38px;
+    padding: 0 18px;
+    background-color: #8B7CF6;
+    color: #FFFFFF;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .site-header__cta:hover {
+    background-color: #7C6AE6;
+    transform: translateY(-1px);
+  }
+
+  .site-header__cta:focus-visible {
+    outline: 2px solid #8B7CF6;
+    outline-offset: 2px;
+  }
+
+  .hamburger-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .site-header__pill {
+    width: calc(100% - 32px);
+    max-width: 520px;
+    height: 48px;
+    padding: 0 10px 0 18px;
+    justify-content: space-between;
+  }
+
+  .site-header__nav,
+  .site-header__cta {
+    display: none !important;
+  }
+
+  .hamburger-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header__pill {
+    width: calc(100% - 24px);
+    max-width: 360px;
+    height: 44px;
+    padding: 0 8px 0 14px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Hero Section Atmosphere (#0A0A0B Unified Studio Canvas)
+   -------------------------------------------------------------------------- */
+.hero--editorial {
+  position: relative;
+  min-height: 960px;
+  padding-top: 104px;
+  padding-bottom: 0;
+  background-color: #0A0A0B;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero__atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Studio Spotlight: Soft Accent Cone from Top-Center */
+.hero__spotlight {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(139, 124, 246, 0.13) 0%, rgba(139, 124, 246, 0.03) 45%, transparent 72%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* Technical Hairline Grid with Radial Edge Fade */
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-size: 56px 56px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 25%, black 25%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 25%, black 25%, transparent 80%);
+}
+
+/* Fine Analog Grain Overlay */
+.hero__noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Smooth Quadratic Bottom Fade into #0A0A0B (No Visible Seam into #problem) */
+.hero__bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent 0%, #0A0A0B 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* --------------------------------------------------------------------------
+   3. Main Container & Headline Lockup
+   -------------------------------------------------------------------------- */
+.hero__container {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary, #A1A1AA);
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Visual Line 1: Huge Uppercase Word "PODCASTS" (~90% container) */
+.hero__giant-word {
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Archivo', 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-stretch: 125%;
+  font-variation-settings: 'wdth' 125, 'wght' 900;
+  text-transform: uppercase;
+  color: #EDEDEF;
+  font-size: clamp(64px, 15vw, 240px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  width: 100%;
+  user-select: none;
+}
+
+.hero__giant-char {
+  display: inline-block;
+  position: relative;
+  will-change: transform;
+}
+
+/* 3D Coin Sticker Replacing "O" */
+.hero__giant-char--coin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.72em;
+  height: 0.72em;
+  margin: 0 0.01em;
+}
+
+.hero__coin-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  animation: coinFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero__coin-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 20px rgba(139, 124, 246, 0.25));
+}
+
+.hero__coin-fallback {
+  display: none;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background-color: #F2B33D;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4), 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero__coin-fallback svg {
+  width: 50%;
+  height: 50%;
+  color: #000000;
+}
+
+@keyframes coinFloat {
+  0%, 100% {
+    transform: translateY(-6px) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(4deg);
+  }
+}
+
+/* Visual Line 2 & CTA Grid Row */
+.hero__line2-cta-row {
+  order: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Second Headline Line: "TURN ANY CONTENT INTO STUDIO-QUALITY AI" */
+.hero__title-line2 {
+  font-family: 'Archivo', 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-stretch: 125%;
+  font-variation-settings: 'wdth' 125, 'wght' 900;
+  text-transform: uppercase;
+  color: #EDEDEF;
+  font-size: clamp(28px, 4.4vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  max-width: 680px;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   4. Neo-Brutalist Capsule CTA & Actions (Right-Aligned on Desktop)
+   -------------------------------------------------------------------------- */
+.hero__cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* 64px Tall Neo-Brutalist Capsule CTA */
+.hero__cta-capsule {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  height: 64px;
+  padding: 0 24px 0 8px;
+  border-radius: 999px;
+  background-color: #16161A;
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  overflow: visible;
+  outline: none;
+}
+
+.hero__cta-play-circle {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero__cta-play-circle svg {
+  transform: translateX(1px);
+}
+
+.hero__cta-label {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background-color: #F2B33D;
+  color: #000000;
+  font-family: 'Archivo', 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(242, 179, 61, 0.3);
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease;
+}
+
+.hero__cta-ripple {
+  position: absolute;
+  inset: -4px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(242, 179, 61, 0.3) 0%, transparent 80%);
+  opacity: 0;
+  transform: scale(0.96);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero__cta-capsule:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+.hero__cta-capsule:hover .hero__cta-play-circle {
+  transform: rotate(90deg) scale(1.04);
+}
+
+.hero__cta-capsule:hover .hero__cta-label {
+  transform: translateX(4px);
+  background-color: #F7BF52;
+}
+
+.hero__cta-capsule:hover .hero__cta-ripple {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+.hero__cta-capsule:focus-visible {
+  outline: 3px solid #8B7CF6;
+  outline-offset: 3px;
+}
+
+/* Smaller 48px Outlined Pill Underneath */
+.hero__cta-secondary {
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  background-color: transparent;
+  color: #EDEDEF;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  outline: none;
+}
+
+.hero__cta-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.hero__cta-secondary:focus-visible {
+  outline: 2px solid #8B7CF6;
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Subcopy & Trust Line (Under Line 2 at Left)
+   -------------------------------------------------------------------------- */
+.hero__subcopy-row {
+  max-width: 480px;
+  text-align: left;
+  margin-top: 14px;
+  position: relative;
+  z-index: 5;
+}
+
+.hero__subcopy {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--color-text-secondary, #A1A1AA);
+  margin: 0 0 10px 0;
+}
+
+.hero__trust-line {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 13px;
+  color: var(--color-text-tertiary, #71717A);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero__trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero__trust-item svg {
+  color: #8B7CF6;
+  flex-shrink: 0;
+}
+
+.hero__trust-sep {
+  opacity: 0.5;
+}
+
+/* --------------------------------------------------------------------------
+   6. Portrait Stage (Center, Bottom-Anchored)
+   -------------------------------------------------------------------------- */
+.hero__portrait-stage {
+  position: absolute;
+  bottom: 0;
+  left: 52%;
+  transform: translateX(-50%);
+  height: 64%;
+  width: 100%;
+  max-width: 960px;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero__portrait-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* 3 Concentric Sound Rings Pulsing from Ear */
+.hero__sound-rings {
+  position: absolute;
+  top: var(--ear-y, 58%);
+  left: var(--ear-x, 61%);
+  transform: translate(-50%, -50%);
+  width: 680px;
+  height: 680px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__sound-ring {
+  transform-origin: 450px 450px;
+  animation: ringPulse 4s ease-in-out infinite;
+  will-change: transform;
+  stroke: rgba(255, 255, 255, 0.20);
+}
+
+.hero__sound-ring--1 {
+  animation-delay: 0s;
+}
+
+.hero__sound-ring--2 {
+  animation-delay: 1.33s;
+}
+
+.hero__sound-ring--3 {
+  animation-delay: 2.66s;
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.95;
+  }
+}
+
+/* Blue Duotone Circle Over Ear (#1F3BFF with Screen Blend on Dark) */
+.hero__ear-duotone {
+  position: absolute;
+  left: var(--ear-x, 61%);
+  top: var(--ear-y, 58%);
+  width: var(--ear-size, 150px);
+  height: var(--ear-size, 150px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(31, 59, 255, 0.95) 0%, rgba(59, 130, 246, 0.5) 60%, transparent 100%);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+  filter: blur(14px);
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Cutout B&W Portrait */
+.hero__portrait-img {
+  position: relative;
+  z-index: 3;
+  display: block;
+  height: 100%;
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  pointer-events: none;
+  user-select: none;
+  filter: contrast(1.06) brightness(0.96);
+}
+
+.hero__portrait-fallback {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
+  z-index: 2;
+}
+
+/* Soft Black Bottom Fade Blending Shoulders into #0A0A0B */
+.hero__portrait-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent 0%, #0A0A0B 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* --------------------------------------------------------------------------
+   7. Ribbon Marquees (-4deg Top in Black Area, +3deg Bottom Reflection)
+   -------------------------------------------------------------------------- */
+.hero__ribbon-wrap {
+  position: absolute;
+  width: 120vw;
+  left: -10vw;
+  overflow: hidden;
+  pointer-events: auto;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+}
+
+/* Top Ribbon: -4deg tilt, 76px tall, in black area, BEHIND portrait */
+.hero__ribbon-wrap--top {
+  top: 70%;
+  z-index: 2;
+  transform: rotate(-4deg);
+}
+
+/* Bottom Ribbon: +3deg tilt, in FRONT of portrait shoulders */
+.hero__ribbon-wrap--bottom {
+  bottom: 28px;
+  z-index: 5;
+  transform: rotate(3deg);
+}
+
+.hero__ribbon {
+  display: flex;
+  height: 76px;
+  width: 100%;
+  user-select: none;
+  will-change: transform;
+  cursor: grab;
+}
+
+.hero__ribbon:hover .hero__ribbon-track {
+  animation-play-state: paused;
+}
+
+.hero__ribbon-track {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: ribbonMarqueeLeft 42s linear infinite;
+  will-change: transform;
+}
+
+.hero__ribbon--bottom .hero__ribbon-track {
+  animation-name: ribbonMarqueeRight;
+  animation-duration: 44s;
+}
+
+@keyframes ribbonMarqueeLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ribbonMarqueeRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Top Ribbon: Tactile Editorial Tape Finish */
+.hero__ribbon--top {
+  height: 76px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), inset 0 1.5px 0 rgba(255, 255, 255, 0.28), inset 0 -1.5px 0 rgba(0, 0, 0, 0.35);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.35);
+}
+
+/* Top Ribbon Color Blocks */
+.hero__ribbon--top .hero__ribbon-block {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 76px;
+  padding: 0 36px;
+  font-family: 'Archivo', 'Unbounded', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  color: #000000;
+  border-right: 2px solid rgba(0, 0, 0, 0.15);
+  transition: filter 0.2s ease;
+}
+
+.hero__ribbon--top .hero__ribbon-block:hover {
+  filter: brightness(1.06);
+}
+
+.block--orange { background-color: #E8843C; }
+.block--blue { background-color: #1F3BFF; color: #FFFFFF !important; border-right-color: rgba(255, 255, 255, 0.18) !important; }
+.block--crimson { background-color: #B3224B; color: #FFFFFF !important; border-right-color: rgba(255, 255, 255, 0.18) !important; }
+.block--green { background-color: #A6EC6E; color: #000000; }
+.block--pink { background-color: #E9468E; color: #FFFFFF !important; border-right-color: rgba(255, 255, 255, 0.18) !important; }
+
+.hero__ribbon-mic {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  vertical-align: middle;
+  opacity: 0.92;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero__ribbon-block:hover .hero__ribbon-mic {
+  transform: scale(1.15);
+}
+
+/* Bottom Ribbon: Refined Frosted Glass Reflection */
+.hero__ribbon--bottom {
+  height: 64px;
+  background: rgba(18, 18, 22, 0.72);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.hero__ribbon--bottom .hero__ribbon-block {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 64px;
+  padding: 0 34px;
+  font-family: 'Archivo', 'Unbounded', sans-serif;
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  background: transparent;
+  color: rgba(237, 237, 239, 0.88);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.2s ease;
+}
+
+.hero__ribbon--bottom .hero__ribbon-block:hover {
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   8. Motion & Intro Keyframes (Progressive Enhancement)
+   -------------------------------------------------------------------------- */
+.hero--animate .hero__eyebrow {
+  animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+}
+
+.hero--animate .hero__giant-char {
+  animation: heroCharRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero--animate .hero__giant-char:nth-child(1) { animation-delay: 0.08s; }
+.hero--animate .hero__giant-char:nth-child(2) { animation-delay: 0.11s; }
+.hero--animate .hero__giant-char:nth-child(3) { animation-delay: 0.14s; }
+.hero--animate .hero__giant-char:nth-child(4) { animation-delay: 0.17s; }
+.hero--animate .hero__giant-char:nth-child(5) { animation-delay: 0.20s; }
+.hero--animate .hero__giant-char:nth-child(6) { animation-delay: 0.23s; }
+.hero--animate .hero__giant-char:nth-child(7) { animation-delay: 0.26s; }
+.hero--animate .hero__giant-char:nth-child(8) { animation-delay: 0.29s; }
+
+.hero--animate .hero__line2-cta-row {
+  animation: heroFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.20s forwards;
+}
+
+.hero--animate .hero__portrait-img {
+  animation: heroFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+}
+
+.hero--animate .hero__ribbon-wrap--top {
+  animation: heroRibbonTopIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.28s forwards;
+}
+
+.hero--animate .hero__ribbon-wrap--bottom {
+  animation: heroRibbonBottomIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.32s forwards;
+}
+
+.hero--animate .hero__subcopy-row {
+  animation: heroFadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroCharRise {
+  from {
+    transform: translateY(24px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroRibbonTopIn {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) rotate(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(-4deg);
+  }
+}
+
+@keyframes heroRibbonBottomIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px) rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(3deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Responsive Adaptations
+   -------------------------------------------------------------------------- */
+
+/* Tablet Viewport (1024px) */
+@media (max-width: 1024px) {
+  .hero--editorial {
+    min-height: 880px;
+    padding-top: 96px;
+  }
+
+  .hero__giant-word {
+    font-size: clamp(60px, 14vw, 170px);
+  }
+
+  .hero__title-line2 {
+    font-size: clamp(24px, 3.8vw, 44px);
+    max-width: 520px;
+  }
+
+  .hero__portrait-stage {
+    height: 48%;
+    max-width: 800px;
+  }
+
+  .hero__cta-capsule {
+    height: 58px;
+    padding: 0 20px 0 6px;
+  }
+
+  .hero__cta-play-circle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero__cta-label {
+    font-size: 15px;
+  }
+}
+
+/* Small Tablet / Portrait (768px) */
+@media (max-width: 768px) {
+  .hero--editorial {
+    min-height: 920px;
+    padding-top: 90px;
+  }
+
+  .hero__giant-word {
+    font-size: clamp(52px, 13vw, 110px);
+  }
+
+  /* CTA row wraps under headline */
+  .hero__line2-cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .hero__title-line2 {
+    font-size: clamp(22px, 3.8vw, 32px);
+    max-width: 100%;
+  }
+
+  .hero__cta-actions {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero__ribbon {
+    height: 56px;
+  }
+
+  .hero__ribbon-block {
+    height: 56px;
+    font-size: 20px;
+    padding: 0 24px;
+  }
+
+  .hero__ribbon-mic {
+    width: 16px;
+    height: 16px;
+  }
+
+  .hero__ribbon-wrap--top {
+    top: 66%;
+  }
+
+  .hero__portrait-stage {
+    height: 42%;
+    bottom: 0;
+  }
+}
+
+/* Mobile Handsets (640px down to 320px) */
+@media (max-width: 640px) {
+  .hero--editorial {
+    min-height: 860px;
+    padding-top: 84px;
+  }
+
+  .hero__container {
+    padding: 0 16px;
+  }
+
+  /* PODCASTS fills full width (~18vw) */
+  .hero__giant-word {
+    font-size: clamp(38px, 17vw, 68px);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    max-width: 100%;
+  }
+
+  .hero__line2-cta-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  /* Line 2 is 28px on mobile */
+  .hero__title-line2 {
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 100%;
+  }
+
+  .hero__subcopy-row {
+    max-width: 100%;
+    margin-top: 14px;
+  }
+
+  .hero__subcopy {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero__trust-line {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  /* Full-width Stacked CTA Buttons (Min 52px tall) */
+  .hero__cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero__cta-capsule {
+    width: 100%;
+    height: 54px;
+    justify-content: flex-start;
+    padding: 0 8px;
+    gap: 10px;
+  }
+
+  .hero__cta-play-circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero__cta-label {
+    flex: 1;
+    text-align: center;
+    font-size: 13.5px;
+    padding: 10px 14px;
+  }
+
+  .hero__cta-secondary {
+    width: 100%;
+    height: 52px;
+  }
+
+  /* One ribbon only on mobile (hide bottom reflection ribbon) */
+  .hero__ribbon-wrap--bottom {
+    display: none;
+  }
+
+  .hero__ribbon-wrap--top {
+    top: 64%;
+    transform: rotate(-3deg);
+  }
+
+  .hero__ribbon {
+    height: 48px;
+  }
+
+  .hero__ribbon-block {
+    height: 48px;
+    font-size: 16px;
+    padding: 0 16px;
+  }
+
+  /* Portrait centered at bottom */
+  .hero__portrait-stage {
+    height: 38%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Two rings only on mobile */
+  .hero__sound-ring--3 {
+    display: none;
+  }
+
+  .hero__sound-rings {
+    width: 380px;
+    height: 380px;
+  }
+
+  .hero__ear-duotone {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* 320px Ultra-Compact Handset */
+@media (max-width: 360px) {
+  .hero__giant-word {
+    font-size: 38px;
+  }
+
+  .hero__title-line2 {
+    font-size: 24px;
+  }
+
+  .hero__trust-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero__coin-wrap,
+  .hero__sound-ring,
+  .hero__ribbon-track {
+    animation: none !important;
+  }
+
+  .hero__ribbon-track {
+    transform: none !important;
+  }
+
+  .hero--animate .hero__eyebrow,
+  .hero--animate .hero__giant-char,
+  .hero--animate .hero__line2-cta-row,
+  .hero--animate .hero__portrait-img,
+  .hero--animate .hero__ribbon-wrap--top,
+  .hero--animate .hero__ribbon-wrap--bottom,
+  .hero--animate .hero__subcopy-row {
+    animation: none !important;
+  }
+}

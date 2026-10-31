@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="50%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#0A0D14" />
+  <rect x="1" y="1" width="30" height="30" rx="7" stroke="url(#favGrad)" stroke-width="1.5" />
+  <!-- Waveform / Microphone icon -->
+  <path d="M16 6a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V9a3 3 0 0 0-3-3z" fill="url(#favGrad)" />
+  <path d="M10 13a6 6 0 0 0 12 0M16 22v4M12 26h8" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" />
+</svg>
+

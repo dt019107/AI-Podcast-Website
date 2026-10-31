@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIPodcasts — Turn Any Content Into Studio-Quality AI Podcasts</title>
+  <meta name="description" content="Generate lifelike, multi-speaker conversational podcasts with emotional nuance, adaptive background audio, and instant video audiograms in minutes.">
+
+  <!-- Google Fonts Preconnect & Imports (Archivo 800/900, Unbounded 800, Instrument Serif, Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Unbounded:wght@800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="shortcut icon" href="assets/icons/favicon-32x32.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/sections/hero.css">
+</head>
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- =========================================================================
+       FLOATING PILL HEADER (Tightened 48px Pill, 14px Nav, 40px CTA)
+       ========================================================================= -->
+  <header class="site-header" id="header">
+    <div class="site-header__pill">
+      <a href="#hero" class="site-header__brand" aria-label="AIPodcasts Home">
+        <svg class="site-header__brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+          <line x1="12" x2="12" y1="19" y2="22"/>
+        </svg>
+        <span>AIPodcasts</span>
+      </a>
+
+      <nav class="site-header__nav" aria-label="Primary Navigation">
+        <a href="#problem" class="site-header__nav-link">Problem</a>
+        <a href="#solution" class="site-header__nav-link">Solution</a>
+        <a href="#how-it-works" class="site-header__nav-link">How It Works</a>
+        <a href="#features" class="site-header__nav-link">Features</a>
+        <a href="#use-cases" class="site-header__nav-link">Use Cases</a>
+        <a href="#demo" class="site-header__nav-link">Demo</a>
+        <a href="#bonuses" class="site-header__nav-link">Bonuses</a>
+        <a href="#pricing" class="site-header__nav-link">Pricing</a>
+        <a href="#faq" class="site-header__nav-link">FAQ</a>
+      </nav>
+
+      <a href="#pricing" class="site-header__cta js-scroll-pricing">
+        <span>Get Started</span>
+      </a>
+
+      <button class="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-sheet">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Full-Screen Mobile Sheet Navigation -->
+  <div class="mobile-sheet" id="mobile-sheet" aria-label="Mobile Navigation" role="dialog" aria-modal="true">
+    <div class="mobile-sheet__links">
+      <a href="#problem" class="mobile-sheet__link">Problem</a>
+      <a href="#solution" class="mobile-sheet__link">Solution</a>
+      <a href="#how-it-works" class="mobile-sheet__link">How It Works</a>
+      <a href="#features" class="mobile-sheet__link">Features</a>
+      <a href="#use-cases" class="mobile-sheet__link">Use Cases</a>
+      <a href="#demo" class="mobile-sheet__link">Demo</a>
+      <a href="#bonuses" class="mobile-sheet__link">Bonuses</a>
+      <a href="#pricing" class="mobile-sheet__link">Pricing</a>
+      <a href="#faq" class="mobile-sheet__link">FAQ</a>
+    </div>
+    <div class="mobile-sheet__footer">
+      <a href="#pricing" class="btn btn--primary btn--block js-scroll-pricing">
+        <span>Get Started</span>
+      </a>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- =========================================================================
+         HERO SECTION (#hero) - Framer Studio Centered Composition & Live Stage
+         ========================================================================= -->
+    <section class="section hero hero--editorial" id="hero">
+      <!-- Atmospheric Backdrop: Studio Spotlight, Technical Grid & Fine Analog Grain -->
+      <div class="hero__atmosphere" aria-hidden="true">
+        <div class="hero__spotlight"></div>
+        <div class="hero__grid"></div>
+        <div class="hero__noise"></div>
+        <div class="hero__bottom-fade"></div>
+      </div>
+
+      <!-- Top Ribbon Marquee (Tilted -4deg, 76px tall, full-bleed, behind portrait in black area) -->
+      <div class="hero__ribbon-wrap hero__ribbon-wrap--top" aria-hidden="true">
+        <div class="hero__ribbon hero__ribbon--top" id="hero-ribbon-top">
+          <div class="hero__ribbon-track">
+            <span class="hero__ribbon-block block--orange">Creators <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--blue">Spotify <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--crimson">Agencies <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--green">Apple Podcasts <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--pink">Marketers <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--orange">YouTube <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--blue">Businesses <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--crimson">RSS <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+          </div>
+          <div class="hero__ribbon-track" aria-hidden="true">
+            <span class="hero__ribbon-block block--orange">Creators <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--blue">Spotify <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--crimson">Agencies <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--green">Apple Podcasts <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--pink">Marketers <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--orange">YouTube <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--blue">Businesses <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+            <span class="hero__ribbon-block block--crimson">RSS <svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Editorial Hero Container -->
+      <div class="container hero__container">
+        <!-- Eyebrow: 13px uppercase, 0.14em tracking, #000 at 60% -->
+        <div class="hero__eyebrow">NEXT-GEN AUDIO SYNTHESIS</div>
+
+        <!-- H1 Lockup: PODCASTS first visually via CSS order, full sentence via aria-label -->
+        <h1 class="hero__title" aria-label="Turn Any Content Into Studio-Quality AI Podcasts">
+          <!-- Visual Line 1: Giant Word PODCASTS (~90% container width) -->
+          <span class="hero__giant-word" aria-hidden="true">
+            <span class="hero__giant-char">P</span>
+            <span class="hero__giant-char hero__giant-char--coin">
+              <span class="sr-only">O</span>
+              <span class="hero__coin-wrap" id="hero-coin-sticker" aria-hidden="true">
+                <img class="hero__coin-img" src="assets/images/hero-mic-3d.webp" alt="" width="120" height="120" loading="eager" fetchpriority="high">
+                <span class="hero__coin-fallback" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                </span>
+              </span>
+            </span>
+            <span class="hero__giant-char">D</span>
+            <span class="hero__giant-char">C</span>
+            <span class="hero__giant-char">A</span>
+            <span class="hero__giant-char">S</span>
+            <span class="hero__giant-char">T</span>
+            <span class="hero__giant-char">S</span>
+          </span>
+
+          <!-- Visual Line 2 & CTA Grid Row: Left headline, Right capsule CTA -->
+          <div class="hero__line2-cta-row">
+            <span class="hero__title-line2">
+              TURN ANY CONTENT INTO STUDIO-QUALITY AI
+            </span>
+
+            <div class="hero__cta-actions">
+              <!-- 64px Tall Neo-Brutalist Capsule CTA -->
+              <a href="#pricing" class="hero__cta-capsule js-scroll-pricing" id="hero-main-cta" aria-label="Get AIPodcasts Now">
+                <span class="hero__cta-play-circle" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#000000"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                </span>
+                <span class="hero__cta-label">GET AIPODCASTS NOW</span>
+                <span class="hero__cta-ripple" aria-hidden="true"></span>
+              </a>
+
+              <!-- 48px Outlined Black Pill Underneath -->
+              <a href="#demo" class="hero__cta-secondary">
+                <span>Listen to Samples</span>
+              </a>
+            </div>
+          </div>
+        </h1>
+
+        <!-- Subcopy & Trust Line Row (Under second headline line at left) -->
+        <div class="hero__subcopy-row">
+          <p class="hero__subcopy">
+            Generate lifelike, multi-speaker conversational podcasts with emotional nuance, adaptive background audio, and instant video audiograms in minutes.
+          </p>
+          <div class="hero__trust-line">
+            <span class="hero__trust-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>30-Day Guarantee</span>
+            </span>
+            <span class="hero__trust-sep" aria-hidden="true">·</span>
+            <span class="hero__trust-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Instant access</span>
+            </span>
+            <span class="hero__trust-sep" aria-hidden="true">·</span>
+            <span class="hero__trust-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>No studio required</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portrait Stage (Center, Bottom-Anchored, Straddling White/Black Split) -->
+      <div class="hero__portrait-stage" id="hero-portrait-stage">
+        <div class="hero__portrait-wrap">
+          <!-- 3 Concentric Sound Rings (Black on white, White on black) -->
+          <svg class="hero__sound-rings" viewBox="0 0 900 900" fill="none" aria-hidden="true">
+            <circle class="hero__sound-ring hero__sound-ring--1" cx="450" cy="450" r="220" stroke-width="1"/>
+            <circle class="hero__sound-ring hero__sound-ring--2" cx="450" cy="450" r="320" stroke-width="1"/>
+            <circle class="hero__sound-ring hero__sound-ring--3" cx="450" cy="450" r="420" stroke-width="1"/>
+          </svg>
+
+          <!-- Blue Duotone Circle Over Ear (#1F3BFF, 150-180px, mix-blend-mode: color/multiply) -->
+          <div class="hero__ear-duotone" id="hero-ear-duotone" aria-hidden="true"></div>
+
+          <!-- Black-and-White Cutout Portrait (Height ~64% of hero, centered at ~52% width) -->
+          <img class="hero__portrait-img" id="hero-portrait-img" src="assets/images/hero-portrait-bw.webp" alt="" width="1024" height="360" loading="eager" fetchpriority="high">
+
+          <!-- Fallback White SVG Headphones/Mic Outline -->
+          <div class="hero__portrait-fallback" aria-hidden="true">
+            <svg viewBox="0 0 100 100" fill="none" stroke="#FFFFFF" stroke-width="2.5">
+              <path d="M20 50 A30 30 0 0 1 80 50 V75 A8 8 0 0 1 72 83 H68 A4 4 0 0 1 64 79 V55 A4 4 0 0 1 68 51 H76 V50 A26 26 0 0 0 24 50 V51 H32 A4 4 0 0 1 36 55 V79 A4 4 0 0 1 32 83 H28 A8 8 0 0 1 20 75 Z"/>
+            </svg>
+          </div>
+
+          <!-- Soft Black Bottom Fade Blending Shoulders into Band -->
+          <div class="hero__portrait-fade" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Bottom Ribbon Marquee (Tilted +3deg, Grayscale Reflection in FRONT of portrait's shoulders) -->
+      <div class="hero__ribbon-wrap hero__ribbon-wrap--bottom" aria-hidden="true">
+        <div class="hero__ribbon hero__ribbon--bottom" id="hero-ribbon-bottom">
+          <div class="hero__ribbon-track">
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Creators</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Spotify</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Agencies</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Apple Podcasts</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Marketers</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>YouTube</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Businesses</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>RSS</span>
+          </div>
+          <div class="hero__ribbon-track" aria-hidden="true">
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Creators</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Spotify</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Agencies</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Apple Podcasts</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Marketers</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>YouTube</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>Businesses</span>
+            <span class="hero__ribbon-block"><svg class="hero__ribbon-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>RSS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         PROBLEM SECTION (#problem)
+         ========================================================================= -->
+    <section class="section" id="problem">
+      <div class="container">
+        <div class="section-header section-header--left reveal-on-scroll">
+          <span class="section-label">The Production Bottleneck</span>
+          <h2 class="reveal-words">Traditional Podcasting Is Slow, Expensive, and Exhausting</h2>
+          <p>
+            Producing a consistent podcast the legacy way demands thousands of dollars in studio gear, endless hours of audio cleanup, and unpredictable guest schedules.
+          </p>
+        </div>
+
+        <div class="problem__bento reveal-on-scroll">
+          <!-- Card 1 (Wide 1.25fr) -->
+          <article class="problem__card">
+            <div class="bento-media">
+              <img src="assets/images/problem-gear.webp" alt="Studio gear hardware" width="640" height="400" loading="lazy">
+            </div>
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+            </div>
+            <h3>Thousands in Studio &amp; Gear Costs</h3>
+            <p>High-end microphones, audio interfaces, acoustic foam, and recording monitors require significant upfront capital before recording a single episode.</p>
+          </article>
+
+          <!-- Card 2 (0.75fr, Video Hover-Play) -->
+          <article class="problem__card">
+            <div class="bento-media">
+              <img src="assets/images/problem-audio-editing.webp" alt="Audio waveform editing" width="400" height="250" loading="lazy">
+              <video muted loop playsinline preload="none">
+                <source src="assets/video/problem-editing.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>20+ Hours of Tedious Audio Editing</h3>
+            <p>Chopping out umms, equalizing frequencies, removing room reverb, and aligning multi-track stems drains creative energy from your business.</p>
+          </article>
+        </div>
+
+        <div class="problem__bento-row-2 reveal-on-scroll">
+          <!-- Card 3 (0.75fr) -->
+          <article class="problem__card">
+            <div class="bento-media">
+              <img src="assets/images/problem-remote-call.webp" alt="Remote conference call" width="400" height="250" loading="lazy">
+            </div>
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+            </div>
+            <h3>Guest Scheduling &amp; Dropouts</h3>
+            <p>Back-and-forth email tags, cancellations, bad internet connections, and poor guest microphones ruin production cadence and show momentum.</p>
+          </article>
+
+          <!-- Card 4 (Wide 1.25fr) -->
+          <article class="problem__card">
+            <div class="bento-media">
+              <img src="assets/images/problem-vocal-fatigue.webp" alt="Creator fatigued at desk" width="640" height="400" loading="lazy">
+            </div>
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><line x1="12" x2="12" y1="19" x2="12" y2="22"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+            </div>
+            <h3>Vocal Fatigue &amp; Monotone Delivery</h3>
+            <p>Recording retakes after vocal fry, unnatural pacing, and throat fatigue lead to inconsistent output and abandoned podcasts after episode 5.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SOLUTION SECTION (#solution)
+         ========================================================================= -->
+    <section class="section" id="solution">
+      <div class="container">
+        <div class="solution__split">
+          <div class="solution__content reveal-on-scroll">
+            <span class="section-label">The Autonomous Alternative</span>
+            <h2 class="reveal-words">The AI Audio Studio Built for Maximum Conversion</h2>
+            <p>
+              AIPodcasts transforms text notes, blogs, PDFs, and outlines into natural two-host discussions and solo deep dives with human cadence and zero recording headaches.
+            </p>
+
+            <div class="solution__benefits-list">
+              <div class="solution__benefit-row">
+                <svg class="solution__benefit-icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                <div class="solution__benefit-text">
+                  <h3>Turn Any Text Into Organic Dialogue</h3>
+                  <p>Paste articles, URLs, or prompts. The engine drafts natural back-and-forth banter, debate, and expert interviews in seconds.</p>
+                </div>
+              </div>
+
+              <div class="solution__benefit-row">
+                <svg class="solution__benefit-icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                <div class="solution__benefit-text">
+                  <h3>Indistinguishable From Human Hosts</h3>
+                  <p>Deep emotional inflection, laughter, interruptions, and natural breathing pauses create compelling broadcast audio.</p>
+                </div>
+              </div>
+
+              <div class="solution__benefit-row">
+                <svg class="solution__benefit-icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                <div class="solution__benefit-text">
+                  <h3>Automatic Broadcast Mastering</h3>
+                  <p>Dynamic range compression, stereo enhancement, and background ambience leveling ensure audio sounds pristine on any sound system.</p>
+                </div>
+              </div>
+
+              <div class="solution__benefit-row">
+                <svg class="solution__benefit-icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+                <div class="solution__benefit-text">
+                  <h3>Publish 10x Faster with 1-Click RSS</h3>
+                  <p>Generate episode cover art, show notes, timestamps, and syndication feeds ready for Apple Podcasts and Spotify instantly.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="solution__media-frame reveal-on-scroll">
+            <img src="assets/images/solution-desk.webp" alt="Creator at production desk" width="600" height="750" loading="lazy">
+            <div class="solution__media-mask"></div>
+            <div class="solution__mockup-inset">
+              <div class="mockup-window">
+                <div class="mockup-window__header">
+                  <span class="mockup-window__title">AIPodcasts Generation Pipeline</span>
+                  <div class="mockup-window__status">
+                    <span class="mockup-window__status-dot"></span>
+                    <span>Ready</span>
+                  </div>
+                </div>
+                <div style="padding: 16px;">
+                  <h3 style="font-size: 0.9375rem; margin-bottom: 6px;">The End-to-End Autonomous Audio Production Suite</h3>
+                  <p style="font-size: 0.8125rem; color: var(--color-text-secondary); margin-bottom: 0;">From source text to multi-platform RSS distribution with zero recording hardware.</p>
+                  <div class="solution__pipeline-waveform" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         HOW IT WORKS SECTION (#how-it-works)
+         ========================================================================= -->
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <div class="how-it-works__sticky-wrapper">
+          <div class="how-it-works__sticky-left reveal-on-scroll">
+            <span class="section-label">Streamlined Workflow</span>
+            <h2 class="reveal-words">How It Works</h2>
+            <p>
+              Launch your entire podcast season in three intuitive steps without recording a single track.
+            </p>
+
+            <!-- Interactive Stepper Navigation -->
+            <div class="how-it-works__nav" role="tablist" aria-label="Workflow Steps">
+              <button class="how-it-works__nav-item is-active js-step-nav" type="button" data-step="1">
+                <span class="how-it-works__nav-num">01</span>
+                <span class="how-it-works__nav-text">Upload Content</span>
+              </button>
+              <button class="how-it-works__nav-item js-step-nav" type="button" data-step="2">
+                <span class="how-it-works__nav-num">02</span>
+                <span class="how-it-works__nav-text">Choose AI Voices</span>
+              </button>
+              <button class="how-it-works__nav-item js-step-nav" type="button" data-step="3">
+                <span class="how-it-works__nav-num">03</span>
+                <span class="how-it-works__nav-text">Generate &amp; Publish</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="how-it-works__steps-col">
+            <!-- Step 1 -->
+            <article class="how-it-works__step-card is-active reveal-on-scroll">
+              <img class="how-it-works__step-bg-photo" src="assets/images/step-write.webp" alt="" width="600" height="400" loading="lazy">
+              <div class="how-it-works__numeral">01</div>
+              <div class="how-it-works__step-content">
+                <h3>Upload or Type Your Content</h3>
+                <p>Feed in raw ideas, blog posts, YouTube transcripts, documents, or bullet outlines. The AI automatically structures them into an engaging podcast script.</p>
+                <div class="how-it-works__step-mockup">
+                  <img src="assets/images/step-1-upload.svg" alt="Step 1 Upload Mockup" width="500" height="160" loading="lazy">
+                </div>
+              </div>
+            </article>
+
+            <!-- Step 2 -->
+            <article class="how-it-works__step-card reveal-on-scroll">
+              <img class="how-it-works__step-bg-photo" src="assets/images/step-voice.webp" alt="" width="600" height="400" loading="lazy">
+              <div class="how-it-works__numeral">02</div>
+              <div class="how-it-works__step-content">
+                <h3>Choose AI Voices and Visuals</h3>
+                <p>Select from dozens of hyper-realistic male and female voice personalities, choose host banter dynamics, and pick dynamic waveform visualizers.</p>
+                <div class="how-it-works__step-mockup">
+                  <img src="assets/images/step-2-voices.svg" alt="Step 2 Voice Selector Mockup" width="500" height="160" loading="lazy">
+                </div>
+              </div>
+            </article>
+
+            <!-- Step 3 -->
+            <article class="how-it-works__step-card reveal-on-scroll">
+              <img class="how-it-works__step-bg-photo" src="assets/images/step-publish.webp" alt="" width="600" height="400" loading="lazy">
+              <div class="how-it-works__numeral">03</div>
+              <div class="how-it-works__step-content">
+                <h3>Generate and Publish Your Podcast</h3>
+                <p>Click generate to produce broadcast-grade MP3/WAV audio and animated MP4 video audiograms ready for Spotify, Apple, and YouTube.</p>
+                <div class="how-it-works__step-mockup">
+                  <img src="assets/images/step-3-publish.svg" alt="Step 3 Publish Mockup" width="500" height="160" loading="lazy">
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         FEATURES SECTION (#features)
+         ========================================================================= -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">Full Feature Suite</span>
+          <h2 class="reveal-words">Engineered for Broadcast-Quality Execution</h2>
+          <p>Everything you need to produce, polish, and syndicate high-retention audio content.</p>
+        </div>
+
+        <div class="features__bento-12 reveal-on-scroll">
+          <!-- Large Tile 1 (6 columns, video background) -->
+          <article class="features__tile--large">
+            <div class="features__tile-bg-media">
+              <img src="assets/images/feature-mastering.webp" alt="Audio Mastering Faders" width="600" height="380" loading="lazy">
+              <video muted loop playsinline preload="none">
+                <source src="assets/video/feature-mixer.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="features__tile-overlay"></div>
+            <div class="features__tile-text">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><line x1="4" x2="20" y1="21" y2="21"/><line x1="4" x2="20" y1="3" y2="3"/><line x1="12" x2="12" y1="7" y2="17"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <h3>Adaptive Smart Mastering</h3>
+              <p>Automatic loudness normalization (LUFS compliance), room echo cancellation, and spatial audio stereo enhancement.</p>
+            </div>
+          </article>
+
+          <!-- Large Tile 2 (6 columns, video background) -->
+          <article class="features__tile--large">
+            <div class="features__tile-bg-media">
+              <img src="assets/images/feature-audiogram.webp" alt="Waveform Spectrum Visualizer" width="600" height="380" loading="lazy">
+              <video muted loop playsinline preload="none">
+                <source src="assets/video/feature-waveform.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="features__tile-overlay"></div>
+            <div class="features__tile-text">
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 8 6 4-6 4Z"/></svg>
+              </div>
+              <h3>Video Podcasts &amp; Audiograms</h3>
+              <p>Generate animated waveform videos with synchronized captions formatted in 16:9 for YouTube and 9:16 for Reels and TikTok.</p>
+            </div>
+          </article>
+
+          <!-- Compact Tile 1 (3 columns) -->
+          <article class="features__tile--small">
+            <div class="features__tile--small-thumb">
+              <img src="assets/images/feature-globe.webp" alt="Global connectivity" width="300" height="180" loading="lazy">
+            </div>
+            <div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <h3>Multi-Language Dubbing</h3>
+              <p>Translate and vocalize your episodes into 30+ languages while preserving tone, emotion, and speaker identity.</p>
+            </div>
+          </article>
+
+          <!-- Compact Tile 2 (3 columns) -->
+          <article class="features__tile--small">
+            <div class="features__tile--small-thumb">
+              <img src="assets/images/feature-mic.webp" alt="Studio Microphones" width="300" height="180" loading="lazy">
+            </div>
+            <div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3>Multi-Speaker Chemistry</h3>
+              <p>Create organic dialogue with host interruptions, spontaneous reactions, laughter, and natural back-and-forth banter.</p>
+            </div>
+          </article>
+
+          <!-- Compact Tile 3 (3 columns) -->
+          <article class="features__tile--small">
+            <div class="features__tile--small-thumb">
+              <img src="assets/images/feature-syndication.webp" alt="Broadcast transmission tower" width="300" height="180" loading="lazy">
+            </div>
+            <div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+              </div>
+              <h3>Instant RSS Syndication</h3>
+              <p>One-click publishing to Apple Podcasts, Spotify, Amazon Music, and all major directories with compliant RSS feeds.</p>
+            </div>
+          </article>
+
+          <!-- Compact Tile 4 (3 columns) -->
+          <article class="features__tile--small">
+            <div class="features__tile--small-thumb">
+              <img src="assets/images/feature-notes.webp" alt="Transcribed notes and documents" width="300" height="180" loading="lazy">
+            </div>
+            <div>
+              <div class="icon-box">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+              </div>
+              <h3>Automated Show Notes &amp; SEO</h3>
+              <p>Generate chapter markers, timestamps, episode summaries, and SEO-optimized transcripts with zero manual transcription.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         USE CASES SECTION (#use-cases)
+         ========================================================================= -->
+    <section class="section" id="use-cases">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">Tailored Workflows</span>
+          <h2 class="reveal-words">Built for Creators, Founders, and Modern Teams</h2>
+          <p>Discover how leading professionals turn knowledge into high-impact episodic audio.</p>
+        </div>
+
+        <div class="use-cases__grid reveal-on-scroll">
+          <!-- Use Case 1 -->
+          <article class="use-cases__card">
+            <div class="use-cases__photo-frame">
+              <img src="assets/images/usecase-marketers.webp" alt="Digital marketing team" width="600" height="375" loading="lazy">
+            </div>
+            <div class="use-cases__content">
+              <h3>Marketers &amp; Campaign Teams</h3>
+              <p>Transform high-performing blog posts, whitepapers, and case studies into serialized audio shows that boost engagement and brand recall.</p>
+              <div class="use-cases__result">
+                <svg class="use-cases__result-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span>Typical Result: 4x content reach without booking studio time</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Use Case 2 -->
+          <article class="use-cases__card">
+            <div class="use-cases__photo-frame">
+              <img src="assets/images/usecase-founders.webp" alt="Founder in executive office" width="600" height="375" loading="lazy">
+            </div>
+            <div class="use-cases__content">
+              <h3>Businesses &amp; Enterprise Founders</h3>
+              <p>Build executive thought leadership, internal team updates, and product documentation podcasts without stepping in front of a microphone.</p>
+              <div class="use-cases__result">
+                <svg class="use-cases__result-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span>Typical Result: Instant authority across Spotify and Apple Podcasts</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Use Case 3 -->
+          <article class="use-cases__card">
+            <div class="use-cases__photo-frame">
+              <img src="assets/images/usecase-creator.webp" alt="Solo creator with headphones" width="600" height="375" loading="lazy">
+            </div>
+            <div class="use-cases__content">
+              <h3>Solo Creators &amp; Bloggers</h3>
+              <p>Repurpose your existing Substack newsletters and written guides into multi-voice podcasts, unlocking an entirely new audio audience.</p>
+              <div class="use-cases__result">
+                <svg class="use-cases__result-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span>Typical Result: Monetizable podcast channel in under 48 hours</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Use Case 4 -->
+          <article class="use-cases__card">
+            <div class="use-cases__photo-frame">
+              <img src="assets/images/usecase-agency.webp" alt="Creative agency production studio" width="600" height="375" loading="lazy">
+            </div>
+            <div class="use-cases__content">
+              <h3>Agencies &amp; Production Houses</h3>
+              <p>Offer turnkey podcast production as a high-margin monthly retainer service to dozens of clients with predictable turnaround times.</p>
+              <div class="use-cases__result">
+                <svg class="use-cases__result-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span>Typical Result: 85% gross margins on audio content packages</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         DEMO / SAMPLES SECTION (#demo)
+         ========================================================================= -->
+    <section class="section" id="demo">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">Audio Fidelity</span>
+          <h2 class="reveal-words">Experience the Audio Quality Firsthand</h2>
+          <p>Toggle between host voice profiles and audition real AI-generated conversational podcast clips.</p>
+        </div>
+
+        <div class="demo__player-box reveal-on-scroll">
+          <div class="demo__player-stage">
+            <img class="demo__player-poster" src="assets/images/demo-poster.webp" alt="Studio production monitor" width="960" height="540" loading="lazy">
+            <div class="demo__player-overlay"></div>
+            <button class="demo__big-play-btn js-audio-play" type="button" aria-label="Play sample podcast">
+              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
+          </div>
+
+          <div class="demo__player-controls-bar">
+            <div class="demo__segmented-tabs" role="tablist">
+              <button class="demo__segment-btn is-active js-voice-btn" role="tab" aria-selected="true" data-voice="julian">Julian (Tech Host)</button>
+              <button class="demo__segment-btn js-voice-btn" role="tab" aria-selected="false" data-voice="elena">Elena (Narrator)</button>
+              <button class="demo__segment-btn js-voice-btn" role="tab" aria-selected="false" data-voice="dual">Dual Dialogue</button>
+            </div>
+
+            <div class="demo__waveform js-visualizer" aria-hidden="true">
+              <!-- 44 Waveform Bars generated via JS or fallback -->
+              <span class="demo__waveform-bar" style="height: 35%;"></span>
+              <span class="demo__waveform-bar" style="height: 60%;"></span>
+              <span class="demo__waveform-bar" style="height: 45%;"></span>
+              <span class="demo__waveform-bar" style="height: 80%;"></span>
+              <span class="demo__waveform-bar" style="height: 65%;"></span>
+              <span class="demo__waveform-bar" style="height: 90%;"></span>
+              <span class="demo__waveform-bar" style="height: 40%;"></span>
+              <span class="demo__waveform-bar" style="height: 75%;"></span>
+              <span class="demo__waveform-bar" style="height: 55%;"></span>
+              <span class="demo__waveform-bar" style="height: 85%;"></span>
+              <span class="demo__waveform-bar" style="height: 60%;"></span>
+              <span class="demo__waveform-bar" style="height: 70%;"></span>
+              <span class="demo__waveform-bar" style="height: 45%;"></span>
+              <span class="demo__waveform-bar" style="height: 90%;"></span>
+              <span class="demo__waveform-bar" style="height: 50%;"></span>
+              <span class="demo__waveform-bar" style="height: 80%;"></span>
+            </div>
+
+            <div class="demo__time-badge">
+              <span class="js-audio-time">0:00</span> / <span>2:15</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         BONUSES SECTION (#bonuses)
+         ========================================================================= -->
+    <section class="section" id="bonuses">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">Exclusive Value</span>
+          <h2 class="reveal-words">Included Launch Bonuses</h2>
+          <p>Every license includes complementary resources to accelerate your audience growth.</p>
+        </div>
+
+        <div class="bonuses__grid reveal-on-scroll">
+          <!-- Bonus 1 -->
+          <article class="bonuses__card">
+            <div class="bonuses__cover-frame">
+              <img src="assets/images/bonus-1.webp" alt="Audience growth framework document" width="400" height="300" loading="lazy">
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span class="badge badge--placeholder">[BONUS PLACEHOLDER]</span>
+            </div>
+            <h3>Podcast Audience Growth Playbook</h3>
+            <p>Comprehensive distribution blueprints to rank in Spotify top charts and build your first 10,000 active listeners.</p>
+          </article>
+
+          <!-- Bonus 2 -->
+          <article class="bonuses__card">
+            <div class="bonuses__cover-frame">
+              <img src="assets/images/bonus-2.webp" alt="Script template desk" width="400" height="300" loading="lazy">
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span class="badge badge--placeholder">[BONUS PLACEHOLDER]</span>
+            </div>
+            <h3>50+ Viral Audio Script Frameworks</h3>
+            <p>Battle-tested podcast hooks, interview prompts, storytelling arcs, and debate structures ready to paste into the AI engine.</p>
+          </article>
+
+          <!-- Bonus 3 -->
+          <article class="bonuses__card">
+            <div class="bonuses__cover-frame">
+              <img src="assets/images/bonus-3.webp" alt="Audio keyboard synthesizer" width="400" height="300" loading="lazy">
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span class="badge badge--placeholder">[BONUS PLACEHOLDER]</span>
+            </div>
+            <h3>Royalty-Free Intro Theme Library</h3>
+            <p>120+ professionally mastered intro music themes, sound effects, stagers, and transitions cleared for commercial broadcast.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         PRICING SECTION (#pricing)
+         ========================================================================= -->
+    <section class="section pricing" id="pricing">
+      <!-- Faint blurred background depth -->
+      <img class="pricing__bg-glow" src="assets/images/demo-poster.webp" alt="" aria-hidden="true">
+
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">Transparent Investment</span>
+          <h2 class="reveal-words">Simple, Predictable Plans for Every Creator</h2>
+          <p>Choose the tier that matches your publishing volume with zero hidden recording costs.</p>
+        </div>
+
+        <div class="pricing__grid reveal-on-scroll">
+          <!-- Plan 1 -->
+          <article class="pricing__card">
+            <div class="pricing__card-header">
+              <h3 class="pricing__plan-name">Starter Tier</h3>
+              <p style="font-size: 0.875rem;">Ideal for solo creators launching their first audio show.</p>
+              <div class="pricing__price-wrapper">
+                <span class="badge badge--placeholder">[PRICE PLACEHOLDER]</span>
+              </div>
+            </div>
+
+            <div class="pricing__features-list">
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Up to 10 episodes per month</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>15 standard AI host voices</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Standard MP3 broadcast export</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Automated show notes &amp; transcripts</span></div>
+            </div>
+
+            <button class="btn btn--secondary btn--block js-buy-btn" type="button">
+              <span>Get Started</span>
+            </button>
+          </article>
+
+          <!-- Plan 2 (Featured) -->
+          <article class="pricing__card pricing__card--featured">
+            <div class="pricing__badge">
+              <span class="section-label" style="color: var(--color-accent); margin-bottom: 0;">Most Popular</span>
+            </div>
+
+            <div class="pricing__card-header">
+              <h3 class="pricing__plan-name">Professional</h3>
+              <p style="font-size: 0.875rem;">For brands, agencies, and prolific content publishers.</p>
+              <div class="pricing__price-wrapper">
+                <span class="badge badge--placeholder">[PRICE PLACEHOLDER]</span>
+              </div>
+            </div>
+
+            <div class="pricing__features-list">
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Unlimited episode generation</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>All 50+ hyper-realistic voice personas</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Dual-host dialogue &amp; conversational chemistry</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>16:9 &amp; 9:16 video audiograms</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Voice cloning (up to 3 custom hosts)</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Full commercial broadcasting license</span></div>
+            </div>
+
+            <button class="btn btn--primary btn--block js-buy-btn" type="button">
+              <span>Claim Pro Access</span>
+            </button>
+          </article>
+
+          <!-- Plan 3 -->
+          <article class="pricing__card">
+            <div class="pricing__card-header">
+              <h3 class="pricing__plan-name">Enterprise</h3>
+              <p style="font-size: 0.875rem;">Tailored scale for media networks and global organizations.</p>
+              <div class="pricing__price-wrapper">
+                <span class="badge badge--placeholder">[PRICE PLACEHOLDER]</span>
+              </div>
+            </div>
+
+            <div class="pricing__features-list">
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Custom dedicated voice cloning models</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>High-throughput API &amp; headless generation</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Multi-seat workspace &amp; team permissions</span></div>
+              <div class="pricing__feature-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Dedicated audio engineer SLA support</span></div>
+            </div>
+
+            <button class="btn btn--secondary btn--block js-buy-btn" type="button">
+              <span>Contact Sales</span>
+            </button>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TESTIMONIALS SECTION (#testimonials)
+         ========================================================================= -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">Customer Voices</span>
+          <h2 class="reveal-words">What Creators &amp; Founders Are Saying</h2>
+          <p>Real experiences from teams publishing podcasts with autonomous audio synthesis.</p>
+        </div>
+
+        <div class="testimonials__grid reveal-on-scroll">
+          <!-- Testimonial 1 -->
+          <article class="testimonials__card">
+            <div class="testimonials__card-header">
+              <div class="testimonials__quote-symbol" aria-hidden="true">&ldquo;</div>
+              <div class="testimonials__stars" aria-label="5 stars" aria-hidden="true">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+            <div class="testimonials__badge-wrap">
+              <span class="badge badge--placeholder">[TESTIMONIAL PLACEHOLDER]</span>
+            </div>
+            <h3 class="testimonials__headline">&ldquo;Saved Us 15 Hours Every Single Week&rdquo;</h3>
+            <p class="testimonials__quote">
+              We turned our entire company engineering blog into a 2-host tech podcast. Our listeners couldn't believe it was AI—the conversational chemistry and natural banter are extraordinary.
+            </p>
+            <div class="testimonials__waveform-preview" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="testimonials__author">
+              <div class="testimonials__avatar testimonials__avatar--mr">MR</div>
+              <div class="testimonials__meta">
+                <h4>Marcus Reynolds</h4>
+                <div class="testimonials__role">[Customer Title Placeholder]</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="testimonials__card">
+            <div class="testimonials__card-header">
+              <div class="testimonials__quote-symbol" aria-hidden="true">&ldquo;</div>
+              <div class="testimonials__stars" aria-label="5 stars" aria-hidden="true">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+            <div class="testimonials__badge-wrap">
+              <span class="badge badge--placeholder">[TESTIMONIAL PLACEHOLDER]</span>
+            </div>
+            <h3 class="testimonials__headline">&ldquo;Listeners Thought We Hired Radio Talent&rdquo;</h3>
+            <p class="testimonials__quote">
+              The audio mastering and breathing pauses make all the difference. We went from zero audio presence to a top-ranked industry podcast in under thirty days.
+            </p>
+            <div class="testimonials__waveform-preview" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="testimonials__author">
+              <div class="testimonials__avatar testimonials__avatar--sl">SL</div>
+              <div class="testimonials__meta">
+                <h4>Sarah Lindqvist</h4>
+                <div class="testimonials__role">[Customer Title Placeholder]</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="testimonials__card">
+            <div class="testimonials__card-header">
+              <div class="testimonials__quote-symbol" aria-hidden="true">&ldquo;</div>
+              <div class="testimonials__stars" aria-label="5 stars" aria-hidden="true">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+            <div class="testimonials__badge-wrap">
+              <span class="badge badge--placeholder">[TESTIMONIAL PLACEHOLDER]</span>
+            </div>
+            <h3 class="testimonials__headline">&ldquo;Top 20 In Our Industry Category&rdquo;</h3>
+            <p class="testimonials__quote">
+              The ability to generate vertical video audiograms along with the audio feed doubled our social reach. AIPodcasts is easily the best investment our marketing team made this year.
+            </p>
+            <div class="testimonials__waveform-preview" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="testimonials__author">
+              <div class="testimonials__avatar testimonials__avatar--dk">DK</div>
+              <div class="testimonials__meta">
+                <h4>David Kumar</h4>
+                <div class="testimonials__role">[Customer Title Placeholder]</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         FAQ SECTION (#faq)
+         ========================================================================= -->
+    <section class="section" id="faq">
+      <div class="container faq__inner">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">Inquiries</span>
+          <h2 class="reveal-words">Frequently Asked Questions</h2>
+          <p>Everything you need to know about autonomous podcast production.</p>
+        </div>
+
+        <div class="accordion js-accordion reveal-on-scroll">
+          <!-- FAQ 1 -->
+          <div class="accordion__item">
+            <h3 class="accordion__header">
+              <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-ans-1" id="faq-btn-1">
+                <span>Do I own full commercial rights to generated episodes?</span>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+              </button>
+            </h3>
+            <div class="accordion__content" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+              <div class="accordion__inner">
+                Yes. You retain 100% full commercial ownership of all audio files, scripts, and video audiograms generated through your AIPodcasts account. You can monetize them on Spotify, Apple, YouTube, and sponsor placements with zero royalty claims.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion__item">
+            <h3 class="accordion__header">
+              <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-ans-2" id="faq-btn-2">
+                <span>Does the audio sound robotic or monotone?</span>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+              </button>
+            </h3>
+            <div class="accordion__content" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+              <div class="accordion__inner">
+                Not at all. AIPodcasts utilizes state-of-the-art conversational neural models trained on broadcast dialogue. Our audio synthesis reproduces natural prosody, breathing cadences, vocal pitch dynamics, realistic pauses, and human vocal inflections.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion__item">
+            <h3 class="accordion__header">
+              <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-ans-3" id="faq-btn-3">
+                <span>Can I clone my own voice or record custom hosts?</span>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+              </button>
+            </h3>
+            <div class="accordion__content" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+              <div class="accordion__inner">
+                Yes. On Professional and Enterprise plans, you can upload a 60-second audio sample of your voice to train an authentic custom voice model that captures your unique timbre, delivery style, and vocal personality.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion__item">
+            <h3 class="accordion__header">
+              <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-ans-4" id="faq-btn-4">
+                <span>How does distribution to Apple Podcasts and Spotify work?</span>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+              </button>
+            </h3>
+            <div class="accordion__content" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+              <div class="accordion__inner">
+                AIPodcasts automatically provisions an industry-standard podcast RSS feed. You can submit this single URL once to Spotify for Podcasters and Apple Podcasts Connect, and all future episodes will automatically sync worldwide.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="accordion__item">
+            <h3 class="accordion__header">
+              <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-ans-5" id="faq-btn-5">
+                <span>Can I edit the generated script before audio synthesis?</span>
+                <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/></svg>
+              </button>
+            </h3>
+            <div class="accordion__content" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+              <div class="accordion__inner">
+                Absolutely. You have complete creative control. You can edit every sentence, add speaker directions (e.g. laughter, whisper, pause), reorder questions, or rewrite entire sections before rendering the broadcast audio.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         GUARANTEE & FINAL CTA SECTION (#guarantee)
+         ========================================================================= -->
+    <section class="section section--no-border" id="guarantee">
+      <div class="container">
+        <!-- Guarantee Box -->
+        <div class="guarantee__box reveal-on-scroll">
+          <div class="guarantee__shield">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div style="margin-bottom: 8px;">
+            <span class="badge badge--placeholder">[GUARANTEE TERMS PLACEHOLDER]</span>
+          </div>
+          <h2>30-Day 100% Risk-Free Satisfaction Guarantee</h2>
+          <p>
+            Experience AIPodcasts risk-free for 30 days. If you are not completely blown away by the natural speech fidelity and production speed, contact our support team for an immediate, courteous 100% refund.
+          </p>
+        </div>
+
+        <!-- Full-Width Rounded Final CTA Frame with Video & 8% Radial Wash -->
+        <div class="final-cta__frame reveal-on-scroll">
+          <video class="final-cta__bg-video" muted loop playsinline preload="none" poster="assets/images/cta-poster.webp">
+            <source src="assets/video/cta-ambient.mp4" type="video/mp4">
+          </video>
+          <div class="final-cta__radial-wash"></div>
+
+          <div class="final-cta__content">
+            <span class="section-label">Instant Production</span>
+            <h2 class="reveal-words">Start Publishing Your Studio-Quality Podcast in 5 Minutes</h2>
+            <p>
+              Join ambitious creators, founders, and marketing leaders producing broadcast-ready audio content without studio headaches.
+            </p>
+            <a href="#pricing" class="btn btn--primary btn--lg js-scroll-pricing">
+              <span>Get AIPodcasts Now</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <!-- Ambient Studio Architectural Texture & Watermark -->
+    <div class="site-footer__texture" aria-hidden="true"></div>
+    <div class="site-footer__glow-beam" aria-hidden="true"></div>
+    <div class="site-footer__bg-wordmark" aria-hidden="true">AIPodcasts</div>
+
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <a href="#hero" class="site-header__brand" aria-label="AIPodcasts Home">
+            <svg class="site-header__brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              <line x1="12" x2="12" y1="19" y2="22"/>
+            </svg>
+            <span>AIPodcasts</span>
+          </a>
+          <p>The autonomous AI audio production suite for creators, brands, and modern media publishers.</p>
+          <div class="site-footer__audio-status" aria-hidden="true">
+            <span class="site-footer__pulse-dot"></span>
+            <div class="site-footer__bars">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer__col">
+          <h3>Product</h3>
+          <ul>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#use-cases">Use Cases</a></li>
+            <li><a href="#demo">Audio Samples</a></li>
+            <li><a href="#pricing">Pricing Plans</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#bonuses">Launch Bonuses</a></li>
+            <li><a href="#faq">Support &amp; FAQ</a></li>
+            <li><a href="#">API Documentation</a></li>
+            <li><a href="#">Podcast RSS Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Commercial License</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__disclaimer">
+          &copy; 2026 AIPodcasts Inc. All rights reserved. Results may vary depending on content and distribution channels. All trademarks belong to their respective owners.
+        </p>
+        <div class="site-footer__bottom-actions">
+          <div class="site-footer__legal-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Cookies</a>
+          </div>
+          <a href="#hero" class="site-footer__back-to-top" aria-label="Back to top">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m18 15-6-6-6 6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vanilla Scripts -->
+  <script defer src="js/hero.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/faq.js"></script>
+  <script src="js/video.js"></script>
+</body>
+</html>

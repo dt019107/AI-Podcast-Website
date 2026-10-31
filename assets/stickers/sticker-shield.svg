@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" fill="none">
+  <defs>
+    <filter id="sticker-shadow-sh" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#000000" flood-opacity="0.4" />
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#10B981" flood-opacity="0.3" />
+    </filter>
+    <linearGradient id="shield-grad" x1="20" y1="14" x2="76" y2="82" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="50%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#064E3B" />
+    </linearGradient>
+  </defs>
+  <g filter="url(#sticker-shadow-sh)">
+    <!-- White Die-Cut Backing -->
+    <path d="M48 12 L74 22 C74 48 64 72 48 82 C32 72 22 48 22 22 Z" 
+          stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round" fill="#FFFFFF" />
+    <!-- Shield Body -->
+    <path d="M48 12 L74 22 C74 48 64 72 48 82 C32 72 22 48 22 22 Z" 
+          fill="url(#shield-grad)" stroke="#FFFFFF" stroke-width="2" />
+    <!-- Inner Border Ring -->
+    <path d="M48 18 L68 26 C68 47 60 67 48 75 C36 67 28 47 28 26 Z" 
+          stroke="#A7F3D0" stroke-width="1.5" stroke-opacity="0.5" fill="none" />
+    <!-- Specular Sheen Half -->
+    <path d="M48 14 L48 78 C35 69 25 47 25 24 L48 14 Z" fill="#FFFFFF" fill-opacity="0.18" />
+    <!-- Golden Checkmark -->
+    <path d="M37 46 L45 54 L61 36" stroke="#FEF08A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M37 46 L45 54 L61 36" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>
