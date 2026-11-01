@@ -31,8 +31,6 @@
   const header = document.getElementById('header');
   const problemSection = document.getElementById('problem');
   const portraitImg = document.getElementById('hero-portrait-img');
-  const earDuotone = document.getElementById('hero-ear-duotone');
-  const soundRings = document.querySelector('.hero__sound-rings');
   const coinSticker = document.getElementById('hero-coin-sticker');
   const mainCta = document.getElementById('hero-main-cta');
   const ribbonTop = document.getElementById('hero-ribbon-top');
@@ -44,9 +42,6 @@
   if (portraitImg) {
     portraitImg.addEventListener('error', () => {
       portraitImg.style.display = 'none';
-      if (earDuotone) earDuotone.style.display = 'none';
-      const fallback = document.querySelector('.hero__portrait-fallback');
-      if (fallback) fallback.style.display = 'block';
     });
   }
 
@@ -157,7 +152,7 @@
 
         // 3. Subtle portrait parallax for touch / non-pointer devices
         if (portraitImg && !isPointerDevice) {
-          portraitImg.style.transform = `translateY(${currentScrollY * 0.06}px)`;
+          portraitImg.style.transform = `translateX(-50%) translateY(${currentScrollY * 0.06}px)`;
         }
       }
 
@@ -198,18 +193,10 @@
       mouseX += (targetX - mouseX) * 0.08;
       mouseY += (targetY - mouseY) * 0.08;
 
-      // Portrait and rings shift up to 12px opposite cursor
+      // Microphone shifts up to 12px opposite cursor
       if (portraitImg) {
         const scrollOffset = (window.pageYOffset || 0) * 0.08;
-        portraitImg.style.transform = `translate(${-mouseX * 12}px, ${-mouseY * 10 + scrollOffset}px)`;
-      }
-
-      if (soundRings) {
-        soundRings.style.transform = `translate(calc(-50% + ${-mouseX * 14}px), calc(-50% + ${-mouseY * 12}px))`;
-      }
-
-      if (earDuotone) {
-        earDuotone.style.transform = `translate(calc(-50% + ${-mouseX * 12}px), calc(-50% + ${-mouseY * 10}px))`;
+        portraitImg.style.transform = `translateX(-50%) translate(${-mouseX * 12}px, ${-mouseY * 10 + scrollOffset}px)`;
       }
 
       // Coin tilts toward cursor
