@@ -549,8 +549,8 @@
    -------------------------------------------------------------------------- */
 .hero__microphone-img {
   position: absolute;
-  top: 315px;
-  left: calc(50% + 122px);
+  top: 323px;
+  left: calc(50% + 123px);
   transform: translateX(-50%);
   width: 650px;
   height: 650px;
