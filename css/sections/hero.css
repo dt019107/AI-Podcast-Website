@@ -242,7 +242,7 @@
 
 .hero__eyebrow {
   font-family: var(--font-sans, 'Inter', sans-serif);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -271,7 +271,7 @@
   font-variation-settings: 'wdth' 125, 'wght' 900;
   text-transform: uppercase;
   color: #EDEDEF;
-  font-size: clamp(64px, 15vw, 240px);
+  font-size: clamp(56px, 13vw, 190px);
   line-height: 0.85;
   letter-spacing: -0.04em;
   width: 100%;
@@ -339,15 +339,16 @@
   }
 }
 
-/* Visual Line 2 & CTA Grid Row */
+/* Visual Line 2 & CTA Row - Grouped on Left Stage */
 .hero__line2-cta-row {
   order: 2;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 32px;
+  gap: 22px;
   width: 100%;
-  margin-top: 10px;
+  max-width: 560px;
+  margin-top: 18px;
 }
 
 /* Second Headline Line: "TURN ANY CONTENT INTO STUDIO-QUALITY AI" */
@@ -355,28 +356,31 @@
   display: block;
   font-family: 'Archivo', 'Unbounded', sans-serif;
   font-weight: 900;
-  font-stretch: 125%;
-  font-variation-settings: 'wdth' 125, 'wght' 900;
+  font-stretch: 112%;
+  font-variation-settings: 'wdth' 112, 'wght' 900;
   text-transform: uppercase;
   color: #EDEDEF;
-  font-size: clamp(28px, 4.4vw, 64px);
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  max-width: 680px;
+  font-size: clamp(22px, 2.7vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  max-width: 500px;
   text-align: left;
-  text-wrap: balance;
-  overflow-wrap: break-word;
+  text-wrap: pretty;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 /* --------------------------------------------------------------------------
-   4. Neo-Brutalist Capsule CTA & Actions (Right-Aligned on Desktop)
+   4. Neo-Brutalist Capsule CTA & Actions (Positioned with Left Content)
    -------------------------------------------------------------------------- */
 .hero__cta-actions {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 12px;
   flex-shrink: 0;
+  z-index: 6;
 }
 
 /* 64px Tall Neo-Brutalist Capsule CTA */
@@ -385,8 +389,8 @@
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  height: 64px;
-  padding: 0 24px 0 8px;
+  height: 60px;
+  padding: 0 22px 0 8px;
   border-radius: 999px;
   background-color: #16161A;
   border: 1.5px solid rgba(255, 255, 255, 0.16);
@@ -400,8 +404,8 @@
 
 .hero__cta-play-circle {
   position: relative;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: #FFFFFF;
   display: flex;
@@ -418,13 +422,13 @@
 
 .hero__cta-label {
   display: inline-block;
-  padding: 10px 18px;
+  padding: 9px 16px;
   border-radius: 999px;
   background-color: #F2B33D;
   color: #000000;
   font-family: 'Archivo', 'Unbounded', sans-serif;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -468,16 +472,16 @@
   outline-offset: 3px;
 }
 
-/* Smaller 48px Outlined Pill Underneath */
+/* Smaller 44px Outlined Pill Underneath */
 .hero__cta-secondary {
-  height: 48px;
-  padding: 0 24px;
+  height: 44px;
+  padding: 0 22px;
   border-radius: 999px;
   border: 1.5px solid rgba(255, 255, 255, 0.18);
   background-color: transparent;
   color: #EDEDEF;
   font-family: var(--font-sans, 'Inter', sans-serif);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: -0.01em;
   white-space: nowrap;
@@ -504,16 +508,18 @@
    5. Subcopy & Trust Line (Under Line 2 at Left)
    -------------------------------------------------------------------------- */
 .hero__subcopy-row {
+  width: 100%;
   max-width: 480px;
+  min-width: 0;
   text-align: left;
-  margin-top: 14px;
+  margin-top: 20px;
   position: relative;
-  z-index: 5;
+  z-index: 10;
 }
 
 .hero__subcopy {
   font-family: var(--font-sans, 'Inter', sans-serif);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.55;
   color: var(--color-text-secondary, #A1A1AA);
   margin: 0 0 10px 0;
@@ -522,26 +528,35 @@
 .hero__trust-line {
   font-family: var(--font-sans, 'Inter', sans-serif);
   font-size: 13px;
-  color: var(--color-text-tertiary, #71717A);
+  font-weight: 500;
+  color: #EDEDEF;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
 }
 
 .hero__trust-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  color: #EDEDEF;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .hero__trust-item svg {
-  color: #8B7CF6;
+  color: #A78BFA;
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5;
   flex-shrink: 0;
 }
 
 .hero__trust-sep {
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* --------------------------------------------------------------------------
@@ -549,17 +564,18 @@
    -------------------------------------------------------------------------- */
 .hero__microphone-img {
   position: absolute;
-  top: 306px;
-  left: calc(50% + 87px);
+  top: auto;
+  bottom: -15px;
+  left: 50%;
   transform: translateX(-50%);
-  width: 650px;
-  height: 650px;
+  width: clamp(520px, 46vw, 680px);
+  height: clamp(520px, 46vw, 680px);
   aspect-ratio: 1 / 1;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
   z-index: 3;
-  filter: contrast(1.04) brightness(0.98);
+  filter: contrast(1.04) brightness(0.98) drop-shadow(0 24px 48px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 40px rgba(139, 124, 246, 0.12));
 }
 
 /* --------------------------------------------------------------------------
@@ -807,39 +823,41 @@
 /* Tablet & Medium Screen Viewports (960px to 1024px) */
 @media (max-width: 1024px) {
   .hero--editorial {
-    min-height: 880px;
+    min-height: 840px;
     padding-top: max(96px, calc(80px + env(safe-area-inset-top, 0px)));
   }
 
   .hero__giant-word {
-    font-size: clamp(52px, 12vw, 150px);
+    font-size: clamp(48px, 11vw, 130px);
   }
 
   .hero__title-line2 {
-    font-size: clamp(24px, 3.6vw, 40px);
-    max-width: 520px;
+    font-size: clamp(20px, 2.8vw, 32px);
+    max-width: 440px;
+    line-height: 1.1;
   }
 
   .hero__microphone-img {
     top: auto;
-    bottom: 30px;
-    left: 54%;
-    width: clamp(380px, 46vw, 540px);
-    height: auto;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(420px, 46vw, 540px);
+    height: clamp(420px, 46vw, 540px);
   }
 
   .hero__cta-capsule {
-    height: 58px;
-    padding: 0 20px 0 6px;
+    height: 56px;
+    padding: 0 18px 0 6px;
   }
 
   .hero__cta-play-circle {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
   }
 
   .hero__cta-label {
-    font-size: 15px;
+    font-size: 13.5px;
   }
 }
 
@@ -848,17 +866,18 @@
   .hero__line2-cta-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 18px;
   }
 
   .hero__title-line2 {
     max-width: 100%;
+    hyphens: none;
+    text-wrap: balance;
   }
 
   .hero__cta-actions {
     align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 12px;
   }
 }
@@ -866,17 +885,21 @@
 /* Small Tablet / Portrait (768px) */
 @media (max-width: 768px) {
   .hero--editorial {
-    min-height: 900px;
+    min-height: 800px;
     padding-top: max(90px, calc(76px + env(safe-area-inset-top, 0px)));
   }
 
   .hero__giant-word {
-    font-size: clamp(44px, 10vw, 88px);
+    font-size: clamp(38px, 9vw, 76px);
   }
 
   .hero__title-line2 {
-    font-size: clamp(22px, 3.8vw, 32px);
+    font-size: clamp(18px, 3.2vw, 26px);
     max-width: 100%;
+    word-break: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    hyphens: none;
   }
 
   .hero__ribbon,
@@ -899,14 +922,20 @@
   }
 
   .hero__ribbon-wrap--top {
-    top: 66%;
+    top: auto;
+    bottom: 170px;
+  }
+
+  .hero__ribbon-wrap--bottom {
+    bottom: 20px;
   }
 
   .hero__microphone-img {
     top: auto;
-    bottom: 20px;
+    bottom: -10px;
     left: 50%;
-    width: clamp(300px, 48vw, 420px);
+    transform: translateX(-50%);
+    width: clamp(340px, 50vw, 440px);
     height: auto;
   }
 }
@@ -914,8 +943,9 @@
 /* Mobile Handsets (640px down to 361px) */
 @media (max-width: 640px) {
   .hero--editorial {
-    min-height: 840px;
+    min-height: 770px;
     padding-top: max(84px, calc(72px + env(safe-area-inset-top, 0px)));
+    padding-bottom: 24px;
   }
 
   .hero__container {
@@ -925,7 +955,7 @@
 
   /* PODCASTS fits safely within 288px container */
   .hero__giant-word {
-    font-size: clamp(32px, 10.5vw, 56px);
+    font-size: clamp(28px, 9vw, 48px);
     line-height: 0.9;
     letter-spacing: -0.03em;
     max-width: 100%;
@@ -939,31 +969,43 @@
 
   .hero__title-line2 {
     display: block;
-    font-size: clamp(17px, 5vw, 24px);
+    font-size: clamp(16px, 4.5vw, 20px);
     font-stretch: 100%;
     font-variation-settings: 'wdth' 100, 'wght' 900;
-    line-height: 1.12;
+    line-height: 1.16;
     letter-spacing: -0.02em;
-    max-width: 100%;
-    word-break: keep-all;
-    overflow-wrap: normal;
+    max-width: 280px;
+    word-break: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    hyphens: none;
   }
 
   .hero__subcopy-row {
+    width: 100%;
     max-width: 100%;
     margin-top: 14px;
+    margin-bottom: 24px;
   }
 
   .hero__subcopy {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.5;
   }
 
   .hero__trust-line {
+    width: 100%;
+    max-width: 340px;
     font-size: 12px;
-    gap: 6px 10px;
+    font-weight: 500;
+    color: #EDEDEF;
+    gap: 8px 14px;
     flex-wrap: wrap;
     justify-content: flex-start;
+  }
+
+  .hero__trust-sep {
+    display: none;
   }
 
   /* Full-width Stacked CTA Buttons (Min 48px/54px tall) */
@@ -1008,7 +1050,8 @@
   }
 
   .hero__ribbon-wrap--top {
-    top: 64%;
+    top: auto;
+    bottom: 105px;
     transform: rotate(-3deg);
   }
 
@@ -1027,30 +1070,43 @@
 
   .hero__microphone-img {
     top: auto;
-    bottom: 10px;
+    bottom: -10px;
     left: 50%;
-    width: clamp(240px, 62vw, 340px);
+    transform: translateX(-50%);
+    width: clamp(210px, 54vw, 270px);
     height: auto;
   }
 }
 
 /* 320px Ultra-Compact Handset (iPhone SE 1st gen / Galaxy Fold narrow) */
 @media (max-width: 360px) {
-  .hero__microphone-img {
-    width: 220px;
+  .hero--editorial {
+    min-height: 720px;
   }
+
+  .hero__microphone-img {
+    width: 200px;
+    bottom: -10px;
+  }
+
+  .hero__ribbon-wrap--top {
+    bottom: 95px;
+  }
+
   .hero__giant-word {
     font-size: clamp(26px, 9vw, 32px);
     letter-spacing: -0.04em;
   }
 
   .hero__title-line2 {
-    font-size: clamp(14px, 4.2vw, 16px);
+    font-size: clamp(14px, 4.4vw, 16px);
     font-stretch: 100%;
     font-variation-settings: 'wdth' 100, 'wght' 900;
-    line-height: 1.15;
-    word-break: keep-all;
-    overflow-wrap: normal;
+    line-height: 1.18;
+    max-width: 260px;
+    word-break: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
   }
 
   .hero__trust-line {
